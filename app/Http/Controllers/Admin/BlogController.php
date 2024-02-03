@@ -146,7 +146,7 @@ class BlogController extends Controller
     }
     public function create_blog(Request $request)
     {
-        // dd($request->all());
+        //  dd($request->all());
         try {
             $blog = new Blog;
             $blog->Tittle = $request->Tittle;
