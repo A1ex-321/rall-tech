@@ -67,7 +67,7 @@
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label for="exampleInputEmail1">OG Image<span style="color:red">*</span></label>
-                                                    <input type="file" name="ogimage" class="form-control" id="exampleInputEmail1" placeholder="" value="{{$getRecord->ogimage}}">
+                                                    <input type="text" name="ogimage" class="form-control" id="exampleInputEmail1" placeholder="" value="{{$getRecord->ogimage}}">
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="exampleInputEmail1">OG Url<span style="color:red">*</span></label>

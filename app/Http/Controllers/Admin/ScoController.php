@@ -79,12 +79,9 @@ class ScoController extends Controller
         $data->metadescription = $request->metadescription;
         $data->ogtitle = $request->ogtitle;
         $data->ogdescription = $request->ogdescription;
-        if ($request->hasFile('ogimage') && $request->file('ogimage')->isValid()) {
-    $imageName = time() . '.' . $request->ogimage->getClientOriginalExtension(); // Get the original file extension
-    $request->ogimage->move(public_path('images'), $imageName);
+        
 
-    $data->ogimage = $imageName;
-} 
+        $data->ogimage = $data->ogimage;
 
         // $data->ogimage = $request->ogimage;
         $data->ogurl = $request->ogurl;
@@ -112,15 +109,9 @@ class ScoController extends Controller
         $data->metadescription = $request->metadescription;
         $data->ogtitle = $request->ogtitle;
         $data->ogdescription = $request->ogdescription;
-        if ($request->hasFile('ogimage') && $request->file('ogimage')->isValid()) {
-            $imageName = time() . '.' . $request->ogimage->getClientOriginalExtension(); // Get the original file extension
-            $request->ogimage->move(public_path('images'), $imageName);
+       
+            $data->ogimage = $request->ogimage;
         
-            $data->ogimage = $imageName;
-        } 
-        else{
-            $data->ogimage = $data->ogimage;
-        }
         $data->ogurl = $request->ogurl;
         $data->ogtype = $request->ogtype;
         $data->save();

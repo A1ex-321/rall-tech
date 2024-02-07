@@ -5,7 +5,9 @@
 
 <!-- SweetAlert2 CSS -->
 
-
+<main id="main" class="main">
+<section class="section dashboard" style="margin-left: -260px;
+">
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -42,32 +44,53 @@
 
                                 <div class="card-body">
                                     <!-- Form inputs here -->
+                                    <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Meta Title<span style="color:red"></span></label>
+            <input type="text" name="metatitle" class="form-control" id="exampleInputEmail1" placeholder="" value="{{$getRecord->metatitle}}" >
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Meta Description<span style="color:red"></span></label>
+            <input type="text" name="metadescription" class="form-control" id="exampleInputEmail1" placeholder="" value="{{$getRecord->metadescription}}" >
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">OG Title<span style="color:red"></span></label>
+            <input type="text" name="ogtitle" class="form-control" id="exampleInputEmail1" placeholder="" value="{{$getRecord->ogtitle}}" >
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">OG Description<span style="color:red"></span></label>
+            <input type="text" name="ogdescription" class="form-control" id="exampleInputEmail1" placeholder="" value="{{$getRecord->ogdescription}}" >
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">OG Image<span style="color:red"></span></label>
+            <input type="text" name="ogimage" class="form-control" id="exampleInputEmail1" placeholder="" value="{{$getRecord->ogimage}}" >
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">OG Url<span style="color:red"></span></label>
+            <input type="text" name="ogurl" class="form-control" id="exampleInputEmail1" placeholder="" value="{{$getRecord->ogurl}}" >
+        </div>
+    </div>
+</div>
+
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Meta Title<span style="color:red">*</span></label>
-                                        <input type="text" name="metatitle" class="form-control" id="exampleInputEmail1" placeholder="" value="{{$getRecord->metatitle}}" >
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Meta Description<span style="color:red">*</span></label>
-                                        <input type="text" name="metadescription" class="form-control" id="exampleInputEmail1" placeholder="" value="{{$getRecord->metadescription}}" >
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">OG Title<span style="color:red">*</span></label>
-                                        <input type="text" name="ogtitle" class="form-control" id="exampleInputEmail1" placeholder="" value="{{$getRecord->ogtitle}}" >
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">OG Description<span style="color:red">*</span></label>
-                                        <input type="text" name="ogdescription" class="form-control" id="exampleInputEmail1" placeholder="" value="{{$getRecord->ogdescription}}" >
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">OG Image<span style="color:red">*</span></label>
-                                        <input type="text" name="ogimage" class="form-control" id="exampleInputEmail1" placeholder="" value="{{$getRecord->ogimage}}" >
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">OG Url<span style="color:red">*</span></label>
-                                        <input type="text" name="ogurl" class="form-control" id="exampleInputEmail1" placeholder="" value="{{$getRecord->ogurl}}" >
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">OG Type<span style="color:red">*</span></label>
+                                        <label for="exampleInputEmail1">OG Type<span style="color:red"></span></label>
                                         <input type="text" name="ogtype" class="form-control" id="exampleInputEmail1" placeholder="" value="{{$getRecord->ogtype}}" >
                                     </div>
                                 </div>
@@ -98,5 +121,6 @@
 
 
 
-
+</section>
+</main>
 @endsection

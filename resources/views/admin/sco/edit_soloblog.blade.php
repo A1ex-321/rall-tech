@@ -5,7 +5,9 @@
 
 <!-- SweetAlert2 CSS -->
 
-
+<main id="main" class="main">
+<section class="section dashboard" style="margin-left: -260px;
+">
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -97,6 +99,7 @@
 
 
 
-
+</section>
+</main>
 
 @endsection

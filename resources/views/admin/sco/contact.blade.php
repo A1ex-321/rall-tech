@@ -5,7 +5,9 @@
 
 <!-- SweetAlert2 CSS -->
 
-
+<main id="main" class="main">
+<section class="section dashboard" style="margin-left: -260px;
+">
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -32,7 +34,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card card-info">
+                    <div class="card card-info" style="border: 1px solid #ccc;">
                         <div class="card-header">
                             <h3 class="card-title">Add contact data <small></small></h3>
                         </div>
@@ -42,32 +44,53 @@
 
                                 <div class="card-body">
                                     <!-- Form inputs here -->
+                                    <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Meta Title<span style="color:red"></span></label>
+            <input type="text" name="metatitle" class="form-control" id="exampleInputEmail1" placeholder="" value="" >
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Meta Description<span style="color:red"></span></label>
+            <input type="text" name="metadescription" class="form-control" id="exampleInputEmail1" placeholder="" value="" >
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">OG Title<span style="color:red"></span></label>
+            <input type="text" name="ogtitle" class="form-control" id="exampleInputEmail1" placeholder="" value="" >
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">OG Description<span style="color:red"></span></label>
+            <input type="text" name="ogdescription" class="form-control" id="exampleInputEmail1" placeholder="" value="" >
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">OG Image<span style="color:red"></span></label>
+            <input type="text" name="ogimage" class="form-control" id="exampleInputEmail1" placeholder="" value="" >
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">OG URL<span style="color:red"></span></label>
+            <input type="text" name="ogurl" class="form-control" id="exampleInputEmail1" placeholder="" value="" >
+        </div>
+    </div>
+</div>
+
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Meta Title<span style="color:red">*</span></label>
-                                        <input type="text" name="metatitle" class="form-control" id="exampleInputEmail1" placeholder="" value="" >
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Meta Description<span style="color:red">*</span></label>
-                                        <input type="text" name="metadescription" class="form-control" id="exampleInputEmail1" placeholder="" value="" >
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">OG Title<span style="color:red">*</span></label>
-                                        <input type="text" name="ogtitle" class="form-control" id="exampleInputEmail1" placeholder="" value="" >
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">OG Description<span style="color:red">*</span></label>
-                                        <input type="text" name="ogdescription" class="form-control" id="exampleInputEmail1" placeholder="" value="" >
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Og Image<span style="color:red">*</span></label>
-                                        <input type="text" name="ogimage" class="form-control" id="exampleInputEmail1" placeholder="" value="" >
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">OG URL<span style="color:red">*</span></label>
-                                        <input type="text" name="ogurl" class="form-control" id="exampleInputEmail1" placeholder="" value="" >
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">OG Type<span style="color:red">*</span></label>
+                                        <label for="exampleInputEmail1">OG Type<span style="color:red"></span></label>
                                         <input type="text" name="ogtype" class="form-control" id="exampleInputEmail1" placeholder="" value="" >
                                     </div>
                                 </div>
@@ -104,46 +127,44 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body p-0">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">OG Title</th>
+                    <th scope="col">OG Description</th>
+                    <th scope="col">OG Image</th>
+                    <th scope="col">OG Url</th>
+                    <th scope="col">OG Type</th>
+                    <th scope="col">Edit & Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($getRecord as $value)
+                <tr>
+                    <th scope="row">{{ $loop->iteration }}</th>
+                    <td>{{ $value->metatitle }}</td>
+                    <td>{{ $value->metadescription }}</td>
+                    <td>{{ $value->ogtitle }}</td>
+                    <td>{{ $value->ogdescription }}</td>
+                    <td>{{$value->ogimage}}
+                        <img src="{{ $value->ogimage }}" alt="" width="100" height="60">
+                    </td>                    <td>{{ $value->ogurl }}</td>
+                    <td>{{ $value->ogtype }}</td>
+                    <td>
+                        <a href="{{ url('admin/contact/edit/'.$value->id) }}" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
+                        <a onclick="return confirm('Are you sure you want to delete?')" href="{{ url('admin/contact/delete/'.$value->id) }}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+</div>
 
-                                        <th>Id</th>
-                                        <th>Title</th>
-                                        <th>Description</th>
-                                        <th>OG Title</th>
-                                        <th>OG Description</th>
-                                        <th>OG Image</th>
-                                        <th>OG Url</th>
-                                        <th>OG Type</th>
-                                        <th>Edit & Delete</th>
-
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @php $counter = 1; @endphp
-
-                                    @foreach ($getRecord as $value)
-                                    <tr>
-                                        <td>{{ $counter++ }}</td>
-                                        <td>{{ $value->metatitle }}</td>
-                                        <td>{{ $value->metadescription }}</td>
-                                        <td>{{ $value->ogtitle }}</td>
-                                        <td>{{ $value->ogdescription }}</td>
-                                        <td>{{ $value->ogimage }}</td>
-                                        <td>{{ $value->ogurl }}</td>
-                                        <td>{{ $value->ogtype }}</td>
-
-                                        <td>
-                                        <a href="{{url('admin/contact/edit/'.$value->id)}}" class="btn"><i class="fas fa-edit"></i></a>
-                                            <a onclick="return confirm('Are you sure you want to delete?')" href="{{url('admin/contact/delete/'.$value->id)}}" class="btn"><i class="fas fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-
-                            </table>
-                        </div>
                         <!-- /.card-body -->
                     </div>
                 </div>
@@ -174,5 +195,6 @@
 
 
 
-
+</section>
+</main>
 @endsection

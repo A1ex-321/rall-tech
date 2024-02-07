@@ -167,8 +167,51 @@
     </li><!-- End Charts Nav -->
     @endif
     @endauth
-
-
+    @auth
+    @if(auth()->user()->role == 1)
+    <li class="nav-item">
+      <a href="{{ route('about-list') }}" class="nav-link {{ request()->is('admin/about/*') ? '' : 'collapsed' }}">
+        <i class="fa fa-tasks" aria-hidden="true"></i><span>About As</span>
+      </a>
+    </li><!-- End Charts Nav -->
+    @endif
+    @endauth
+    @auth
+    @if(auth()->user()->role == 1)
+    <li class="nav-item">
+      <a href="{{ route('service-list') }}" class="nav-link {{ request()->is('admin/service/*') ? '' : 'collapsed' }}">
+        <i class="bi bi-bar-chart"></i><span>Service</span>
+      </a>
+    </li><!-- End Charts Nav -->
+    @endif
+    @endauth
+    @auth
+    @if(auth()->user()->role == 1)
+    <li class="nav-item">
+      <a href="{{ route('contact-list') }}" class="nav-link {{ request()->is('admin/contact/*') ? '' : 'collapsed' }}">
+        <i class="bi bi-bell"></i><span>Contact</span>
+      </a>
+    </li><!-- End Charts Nav -->
+    @endif
+    @endauth
+    @auth
+    @if(auth()->user()->role == 1)
+    <li class="nav-item">
+      <a href="{{ route('scoblog-list') }}" class="nav-link {{ request()->is('admin/scoblog/*') ? '' : 'collapsed' }}">
+        <i class="bi bi-question-circle"></i><span>SEO All Work</span>
+      </a>
+    </li><!-- End Charts Nav -->
+    @endif
+    @endauth
+    @auth
+    @if(auth()->user()->role == 1)
+    <li class="nav-item">
+      <a href="{{ route('work-list') }}" class="nav-link {{ request()->is('admin/work/*') ? '' : 'collapsed' }}">
+        <i class="fa fa-tasks"></i><span>SEO All Blog</span>
+      </a>
+    </li><!-- End Charts Nav -->
+    @endif
+    @endauth
   </ul>
 
 </aside><!-- End Sidebar-->
