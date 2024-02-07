@@ -27,74 +27,93 @@
         margin-right: 10px;
     }
 </style>
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-        <!-- Content header content here -->
-    </div>
+<main id="main" class="main">
+    <section class="section dashboard" style="margin-left: -260px;
+">
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <!-- Content header content here -->
+            </div>
 
-    <div class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card card-info">
-                        <div class="card-header">
-                            <h3 class="card-title">Edit Blog <small></small></h3>
-                        </div>
-                        <form action="{{ route('update-brand', ['id' => $getRecord->id]) }}" method="post" enctype="multipart/form-data">
-                            {{csrf_field()}}
-
-
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Title<span style="color:red">*</span></label>
-                                    <input type="text" name="Tittle" class="form-control" id="exampleInputEmail1" placeholder="Title" value="{{old('Tittle', $getRecord->Tittle)}}" required>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card card-info">
+                                <div class="card-header">
+                                    <h3 class="card-title">Edit Blog <small></small></h3>
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Description<span style="color:red"></span></label>
-                                    <textarea name="Description" class="form-control" id="exampleInputEmail1" placeholder="Description"style="width: 100%; height: 100px;">{{ old('Tittle', $getRecord->Description) }}</textarea>
-
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Image<span style="color:red">*</span></label>
-                                    <input type="file" name="Image" class="form-control" id="exampleInputEmail1" placeholder="Image" value="{{ old('Tittle', $getRecord->Image) }}" >
-                                </div>
-
-                                @if ($getRecord->Image)
-                                <div>
-                                    <img src="{{ asset('public/images/' . $getRecord->Image) }}" alt="Uploaded Image" style="max-width: 100px; max-height: 100px;">
-                                </div>
-                                @endif
-
-                                <input type="hidden" id="imageIds" name="multiimage" value="">
-
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Multiple Image<span style="color:red">*</span></label>
-                                    <input type="file" id="imageInput" name="" class="form-control" value="" multiple >
-                                </div>
+                                <form action="{{ route('update-brand', ['id' => $getRecord->id]) }}" method="post" enctype="multipart/form-data">
+                                    {{csrf_field()}}
 
 
-                                <!-- <div class="form-group">
+                                    <div class="card-body">
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Title<span style="color:red">*</span></label>
+                                                    <input type="text" name="Tittle" class="form-control" id="exampleInputEmail1" placeholder="Title" value="{{old('Tittle', $getRecord->Tittle)}}" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Image<span style="color:red">*</span></label>
+                                                    <input type="file" name="Image" class="form-control" id="exampleInputEmail1" placeholder="Image" value="{{ old('Tittle', $getRecord->Image) }}">
+                                                </div>
+                                                @if ($getRecord->Image)
+                                                <div>
+                                                    <img src="{{ asset('public/images/' . $getRecord->Image) }}" alt="Uploaded Image" style="max-width: 70px; max-height: 100px;">
+                                                </div>
+                                                @endif
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                        <input type="hidden" id="imageIds" name="multiimage" value="">
+
+
+
+                                        <!-- <div class="form-group">
                                     <label for="exampleInputEmail1">multiple Image<span style="color:red">*</span></label>
                                     <input type="file" id="imageInput" name="image" accept="image/*" multiple>
                                 </div> -->
-                                <div id="preview"></div>
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Description<span style="color:red"></span></label>
+                                                    <textarea name="Description" class="form-control" id="exampleInputEmail1" placeholder="Description" style="height: 100px;">{{ old('Tittle', $getRecord->Description) }}</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Multiple Image<span style="color:red">*</span></label>
+                                                    <input type="file" id="imageInput" name="images[]" class="form-control" value="" multiple>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                <!-- /.card-body -->
-                                <div class="card-footer">
-                                    <button type="submit" class="btn btn-info">Submit</button>
-                                </div>
-                        </form>
+                                        <div id="preview"></div>
+
+                                        <!-- /.card-body -->
+                                        <div class="card-footer">
+                                            <button type="submit" class="btn btn-info">Submit</button>
+                                        </div>
+                                </form>
+                            </div>
+
+
+                        </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
-    </div>
-</div>
-</div>
-
+        </div>
+    </section>
+</main>
 @endsection
 @push('scripts')
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

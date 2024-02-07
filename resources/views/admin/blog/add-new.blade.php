@@ -27,6 +27,9 @@
         margin-right: 10px;
     }
 </style>
+<main id="main" class="main">
+<section class="section dashboard" style="margin-left: -260px;
+">
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -37,7 +40,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card card-info">
+                    <div class="card card-info" style="border: 1px solid #ccc;">
                         <div class="card-header">
                             <h3 class="card-title">Add New Work <small></small></h3>
                         </div>
@@ -46,26 +49,36 @@
 
 
                             <div class="card-body">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Title<span style="color:red">*</span></label>
-                                    <input type="text" name="Tittle" class="form-control" id="exampleInputEmail1" placeholder="Title" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Description<span style="color:red"></span></label>
-                                   <textarea name="Description" class="form-control" id="exampleInputEmail1" placeholder="Description" style="width: 100%; height: 100px;"></textarea>
+                            <div class="form-row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Title<span style="color:red">*</span></label>
+            <input type="text" name="Tittle" class="form-control" id="exampleInputEmail1" placeholder="Title" value="" required>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Thumb Image<span style="color:red">*</span></label>
+            <input type="file" name="Image" class="form-control" id="exampleInputEmail1" placeholder="Image" value="" required>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="imageIds" name="multiimage" value="">
+<div class="form-row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Description<span style="color:red"></span></label>
+            <textarea name="Description" class="form-control" id="exampleInputEmail1" placeholder="Description" style="height: 100px;"></textarea>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Multiple Image<span style="color:red">*</span></label>
+            <input type="file" id="imageInput" name="images[]" class="form-control" value="" multiple required>
+        </div>
+    </div>
+</div>
 
-
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Thumb Image<span style="color:red">*</span></label>
-                                    <input type="file" name="Image" class="form-control" id="exampleInputEmail1" placeholder="Image" value="" required>
-                                </div>
-                                <input type="hidden" id="imageIds" name="multiimage" value="">
-
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Multiple Image<span style="color:red">*</span></label>
-                                    <input type="file" id="imageInput" name="" class="form-control" value="" multiple required>
-                                </div>
 
 
                                 <!-- <div class="form-group">
@@ -88,7 +101,8 @@
     </div>
 </div>
 </div>
-
+</section>
+</main>
 @endsection
 @push('scripts')
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

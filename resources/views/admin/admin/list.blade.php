@@ -4,31 +4,85 @@
 @section('content')
 
 
-
+<main id="main" class="main">
+<section class="section dashboard" style="margin-left: -260px;
+">
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-0">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard v3</h1>
+            <h1 class="m-0">User</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard </li>
-
-
-
-              <a href="{{url('admin/admin/add')}}" class="btn btn-block btn-primary">
-                Add Admin
-            </a>
+    <div class="float-sm-right">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard</li>
         </ol>
-          </div><!-- /.col -->
+
+        <a href="{{url('admin/admin/add')}}" class="btn btn-primary btn-sm">
+            <i class="fas fa-plus"></i> Add Admin
+        </a>
+    </div>
+</div>
+
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
+    <section class="section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">User Tables</h5>
+
+                        <!-- Table with stripped rows -->
+                        <div class="table-responsive">
+                            <table class="table table-striped datatable">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Status</th>
+                                        <th>Role</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($getRecord as $value)
+                                    <tr>
+                                        <td>{{$value->id}}</td>
+                                        <td>{{$value->name}}</td>
+                                        <td>{{$value->email}}</td>
+                                        <td>{{$value->status == 0 ? 'Active' : 'Inactive'}}</td>
+                                        <td>{{$value->role == 0 ? 'Admin' : 'Super Admin'}}</td>
+                                        <td>
+                                            <a href="{{url('admin/admin/edit/'.$value->id)}}" class="btn btn-info"><i
+                                                    class="fas fa-edit"></i></a>
+                                            <a onclick="return confirm('Are you sure you want to delete?')"
+                                                href="{{url('admin/admin/delete/'.$value->id)}}" class="btn btn-danger"><i
+                                                    class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- End Table with stripped rows -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    @include('admin.layouts.message')
 
     <!-- Main content -->
     <div class="content">
@@ -38,66 +92,7 @@
 
 
           </div>
-        {{-- Start -  Content comes here --}}
-        <div class="col-12">
-            @include('admin.layouts.message')
-        <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">Striped Full Width Table</h3>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body p-0">
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th style="width: 10px">#</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Status</th>
-                    <th>Role</th>
-                    <th>Action</th>
 
-                  </tr>
-                </thead>
-                <tbody>
-                  
-                    @foreach($getRecord as $value )
-
-
-                  <tr>
-                    <td>{{$value->id}}</td>
-                    <td>{{$value->name}} </td>
-                    <td>{{$value->email}} </td>
-                    <td>{{$value->status==0 ? 'Active' : 'Inactive'}} </td>
-                    <td>{{$value->role==0 ? 'Admin' : 'Super Admin'}} </td>
-
-
-                    <td >
-
-                          <a href="{{url('admin/admin/edit/'.$value->id)}}" class="btn  "><i class="fas fa-edit"></i>
-                          </a>
-                          <a onclick="return confirm('Are you sure you want to delete?')" href="{{url('admin/admin/delete/'.$value->id)}}" class="btn "><i class="fas fa-trash"></i></a>
-
-                      </td>
-
-                  </tr>
-                  @endforeach
-
-                </tbody>
-              </table>
-            </div>
-            <!-- /.card-body -->
-          </div>
-          </div>
-
-
-
-
-
-
-
-
-{{-- its toggle button html script --}}
 
 
 
@@ -196,6 +191,8 @@
     </div>
     <!-- /.content -->
   </div>
+  </section>
+</main>
   @endsection
 
 @section('style')

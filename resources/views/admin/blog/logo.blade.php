@@ -4,8 +4,10 @@
 @section('content')
 
 <!-- SweetAlert2 CSS -->
-
-
+<style></style>
+<main id="main" class="main">
+<section class="section dashboard" style="margin-left: -260px;
+">
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -33,8 +35,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-info">
-                        <div class="card-header">
-                            <h3 class="card-title">Add New Blog <small></small></h3>
+                        <div class="card-header"  style="background-color:
+#6e9ee6
+;">
+                            <h3 class="card-title">Add New Logo <small></small></h3>
                         </div>
                         <div class="container">
                             <form action="{{ route('create-logo') }}" method="post" enctype="multipart/form-data">
@@ -80,36 +84,31 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body p-0">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead style="background-color: #8393a8;"> <!-- Dark header for better contrast -->
+                <tr>
+                    <th>#</th>
+                    <th>Logo</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @php $counter = 1; @endphp
+                @foreach ($getRecord as $value)
+                <tr>
+                    <td>{{ $counter++ }}</td>
+                    <td><img src="{{ asset('public/images/' . $value->image) }}" alt="Image" width="80" height="80"></td>
+                    <td>
+                        <a onclick="return confirm('Are you sure you want to delete?')" href="{{url('admin/logo/delete/'.$value->id)}}" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</a>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+</div>
 
-                                        <th>Id</th>
-                                        <th>Logo</th>
-                                        <th>Delete</th>
-
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @php $counter = 1; @endphp
-
-                                    @foreach ($getRecord as $value)
-                                    <tr>
-                                        <td>{{ $counter++ }}</td>
-                                        <td><img src="{{ asset('public/images/' . $value->image) }}" alt="Image" width="80" height="80"></td>
-
-                                   
-
-                                        <td>
-
-                                            <a onclick="return confirm('Are you sure you want to delete?')" href="{{url('admin/logo/delete/'.$value->id)}}" class="btn"><i class="fas fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-
-                            </table>
-                        </div>
                         <!-- /.card-body -->
                     </div>
                 </div>
@@ -140,5 +139,6 @@
 
 
 
-
+</section>
+</main>
 @endsection

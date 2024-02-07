@@ -4,19 +4,21 @@
 @section('content')
 
 
-
+<main id="main" class="main">
+<section class="section dashboard" style="margin-left: -260px;
+">
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard v3</h1>
+            <h1 class="m-0">Add user and Admin</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v3</li>
+              <li class="breadcrumb-item active">Add User</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -35,53 +37,59 @@
 
 
         <div class="col-md-12">
-            <!-- jquery validation -->
-            <div class="card card-info">
-              <div class="card-header">
-                <h3 class="card-title">Add New Admin <small>Page</small></h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form   action="" method="post">
-                {{csrf_field()}}
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Name</label>
-                    <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Enter name" value="{{old('name')}}" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="{{old('email')}}" required>
-                    <div style="color:red" >{{$errors->first('email')}}</div>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="text" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Status</label>
-                   <select name="status" class="form-control" required>
-                    <option value="0" {{(old('status'==0)?'selected':'')}}>Active</option>
-                    <option value="1" {{(old('status'==1)?'selected':'')}}> Inactive</option>
-                   </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Status</label>
-                   <select name="role" class="form-control" required>
-                    <option value="0" {{(old('status'==0)?'selected':'')}}>Admin</option>
-                    <option value="1" {{(old('status'==1)?'selected':'')}}>super Admin</option>
-                   </select>
-                  </div>
+    <!-- jQuery validation -->
+    <div class="card ">
+        <div class="card-header" style="background-color:#6e9ee6; border: 1px solid #ccc;"style="">
+            <h3 class="card-title">Add New Admin <small>Page</small></h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- Form start -->
+        <form action="" method="post">
+            {{ csrf_field() }}
+            <div class="card-body">
+              
+                <div class="form-row">
+    <div class="form-group col-md-6">
+        <label for="name">Name</label>
+        <input type="text" name="name" class="form-control" id="name" placeholder="Enter name" value="{{ old('name') }}" required>
+    </div>
+    <div class="form-group col-md-6">
+        <label for="email">Email address</label>
+        <input type="email" name="email" class="form-control" id="email" placeholder="Enter email" value="{{ old('email') }}" required>
+        <div style="color:red">{{ $errors->first('email') }}</div>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <label for="password">Password</label>
+        <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+    </div>
+    <div class="form-group col-md-6">
+        <label for="status">Status</label>
+        <select name="status" class="form-control" required>
+            <option value="0" {{ (old('status') == 0 ? 'selected' : '') }}>Active</option>
+            <option value="1" {{ (old('status') == 1 ? 'selected' : '') }}>Inactive</option>
+        </select>
+    </div>
+</div>
 
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <select name="role" class="form-control" required>
+                        <option value="0" {{ (old('role') == 0 ? 'selected' : '') }}>Admin</option>
+                        <option value="1" {{ (old('role') == 1 ? 'selected' : '') }}>Super Admin</option>
+                    </select>
                 </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-info">Submit</button>
-                </div>
-              </form>
             </div>
-            <!-- /.card -->
+            <!-- /.card-body -->
+            <div class="card-footer">
+                <button type="submit" class="btn btn-info">Submit</button>
             </div>
+        </form>
+    </div>
+    <!-- /.card -->
+</div>
+
 
 
 
@@ -101,6 +109,8 @@
     </div>
     <!-- /.content -->
   </div>
+</section>
+</main>
   @endsection
 
 

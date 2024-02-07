@@ -5,7 +5,9 @@
 
 <!-- SweetAlert2 CSS -->
 
-
+<main id="main" class="main">
+<section class="section dashboard" style="margin-left: -260px;
+">
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -32,7 +34,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card card-info">
+                    <div class="card card-info" style="border: 1px solid #ccc;">
                         <div class="card-header">
                             <h3 class="card-title">Edit  link <small></small></h3>
                         </div>
@@ -43,7 +45,7 @@
                                 <div class="card-body">
                                     <!-- Form inputs here -->
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Sco link<span style="color:red">*</span></label>
+                                        <label style="margin-top:10px;"for="exampleInputEmail1">Sco link<span style="color:red">*</span></label>
                                         <input type="text" name="scolink" class="form-control" id="exampleInputEmail1" placeholder="" value="{{$getRecord->scolink}}" >
                                     </div>
                                 </div>
@@ -74,5 +76,6 @@
 
 
 
-
+</section>
+</main>
 @endsection
