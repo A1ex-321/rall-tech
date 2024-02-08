@@ -23,7 +23,8 @@ use App\Http\Controllers\Admin\FranchiseController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\DemoController;
 use App\Http\Controllers\Admin\ScoController;
-
+use App\Http\Controllers\tech\TechController;
+use App\Http\Controllers\Admin\TechadminController;
 
 // use App\Http\Controllers\Admin\Website;
 // use App\Http\Controllers\web\Website;
@@ -243,3 +244,36 @@ Route::post('razorpay-payment', [CheckoutController::class, 'store'])->name('raz
 //orders
 
 Route::get('my-orders', [OrderDetailsController::class, 'myOrders'])->name('my-orders');
+
+
+
+
+Route::get('/', [TechController::class, 'home']);
+Route::get('/about', [TechController::class, 'about']);
+Route::get('/service', [TechController::class, 'service']);
+Route::get('/team', [TechController::class, 'team']);
+Route::get('/client', [TechController::class, 'client']);
+Route::get('/event', [TechController::class, 'event']);
+Route::get('/resource', [TechController::class, 'resource']);
+Route::get('/contact', [TechController::class, 'contact']);
+//Add service
+Route::get('admin/addservice/list', [TechadminController::class, 'service_list'])->name('ser-list');
+Route::post('admin/addservice/add', [TechadminController::class, 'service_add'])->name('add-service1');
+
+Route::get('admin/addservice/edit/{id}', [TechadminController::class, 'edit']);
+Route::post('admin/addservice/update/{id}', [TechadminController::class, 'service_update'])->name('updateservice');
+
+Route::get('admin/addservice/delete/{id}', [TechadminController::class, 'admin_add_delete']);
+
+//Add Teams
+Route::get('admin/addteams/list', [TechadminController::class, 'team_list'])->name('ser-list');
+Route::post('admin/addteams/add', [TechadminController::class, 'team_add'])->name('add-team');
+
+Route::get('admin/addteams/edit/{id}', [TechadminController::class, 'teamsedit']);
+Route::post('admin/addteams/update/{id}', [TechadminController::class, 'teams_update'])->name('updateteams');
+
+Route::get('admin/addteams/delete/{id}', [TechadminController::class, 'teamdelete']);
+
+
+
+

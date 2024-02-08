@@ -117,6 +117,33 @@
 
     </li><!-- End Components Nav -->
 
+    @auth
+    @if(auth()->user()->role == 1)
+    <li class="nav-item">
+      <a href="{{url('/admin/addservice/list')}}" class="nav-link {{ request()->segment(2) === 'addservice' ? '' : 'collapsed' }}"> <i class="bi bi-grid"></i>
+        <span>Add Service</span>
+      </a>
+    </li><!-- End Dashboard Nav -->
+    @endif
+    @endauth
+    @auth
+    @if(auth()->user()->role == 1)
+    <li class="nav-item">
+      <a href="{{url('/admin/addteams/list')}}" class="nav-link {{ request()->segment(2) === 'addteams' ? '' : 'collapsed' }}"> <i class="bi bi-question-circle"></i>
+        <span>Add Teams</span>
+      </a>
+    </li><!-- End Dashboard Nav -->
+    @endif
+    @endauth
+    @auth
+    @if(auth()->user()->role == 1)
+    <li class="nav-item">
+      <a href="{{url('/admin/client/list')}}" class="nav-link {{ request()->segment(2) === 'client' ? '' : 'collapsed' }}"> <i class="bi bi-person"></i>
+        <span>Clients</span>
+      </a>
+    </li><!-- End Dashboard Nav -->
+    @endif
+    @endauth
     <li class="nav-item">
       <a href="{{route('blog-list')}}" class="nav-link {{ request()->segment(2) === 'blog' ? '' : 'collapsed' }}">
         <i class="bi bi-journal-text"></i><span>Work</span>
