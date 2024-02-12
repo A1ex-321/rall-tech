@@ -11,7 +11,7 @@ class Blogsco extends Model
     protected $table = 'blogsco';
 
     protected $fillable = [
-        'title','description' ,'image','content'
+        'title','description' ,'image','content','multiimage','tech'
     ];
  
 }

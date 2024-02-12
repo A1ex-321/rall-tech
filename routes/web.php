@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Models\Mailstores;
+
 use App\Mail\SendMail;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\AuthController;
@@ -161,7 +164,7 @@ Route::group(['middleware' => 'admin', 'web'], function () {
     Route::post('admin/blogseo/edit/{id}', [ScoController::class, 'blogsco_update'])->name('blogsco-update');
 
     Route::post('admin/sco/edit/{id}', [ScoController::class, 'sco_update'])->name('sco-update');
-    Route::get('view_blogcontent/{id}', [ScoController::class, 'content_view'])->name('view_blogcontent');
+    Route::get('view_blogcontent/{id}', [ScoController::class, 'view_blogcontent'])->name('view_blogcontent');
     //   SCO content blog
     Route::get('admin/scoblog/scobloglist', [ScoController::class, 'scobloglist'])->name('scoblog-list');
     Route::post('admin/scoblog/addscoblog', [ScoController::class, 'create_scoblog'])->name('create-scoblog');
@@ -190,6 +193,59 @@ Route::group(['middleware' => 'admin', 'web'], function () {
     Route::post('/validate-slug', 'ScoController@validateSlug')->name('validate-slug');
 
 
+
+
+
+    //Add service
+Route::get('admin/addservice/list', [TechadminController::class, 'service_list'])->name('ser-list');
+Route::post('admin/addservice/add', [TechadminController::class, 'service_add'])->name('add-service1');
+
+Route::get('admin/addservice/edit/{id}', [TechadminController::class, 'edit']);
+Route::post('admin/addservice/update/{id}', [TechadminController::class, 'service_update'])->name('updateservice');
+
+Route::get('admin/addservice/delete/{id}', [TechadminController::class, 'admin_add_delete']);
+
+//Add Teams
+Route::get('admin/addteams/list', [TechadminController::class, 'team_list'])->name('ser-list');
+Route::post('admin/addteams/add', [TechadminController::class, 'team_add'])->name('add-team');
+
+Route::get('admin/addteams/edit/{id}', [TechadminController::class, 'teamsedit']);
+Route::post('admin/addteams/update/{id}', [TechadminController::class, 'teams_update'])->name('updateteams');
+
+Route::get('admin/addteams/delete/{id}', [TechadminController::class, 'teamdelete']);
+
+
+//Add client
+Route::get('admin/client/list', [TechadminController::class, 'client_list'])->name('ser-list');
+Route::post('admin/client/add', [TechadminController::class, 'client_add'])->name('add-client');
+Route::post('admin/client/test', [TechadminController::class, 'test_add'])->name('add-test');
+Route::get('admin/client/edit/{id}', [TechadminController::class, 'clientedit']);
+Route::post('admin/client/update/{id}', [TechadminController::class, 'client_update'])->name('updateclient');
+
+Route::get('admin/client/delete/{id}', [TechadminController::class, 'clientdelete']);
+
+Route::get('admin/test/delete/{id}', [TechadminController::class, 'testdelete']);
+   //   event blog
+   Route::get('admin/event/eventlist', [TechadminController::class, 'bloglist'])->name('blogsco-list');
+   Route::post('admin/events/eventlists', [TechadminController::class, 'create_blogsco'])->name('create-event');
+   Route::get('admin/eve/delete/{id}', [TechadminController::class, 'event_delete']);
+   Route::get('admin/eventedit/edit/{id}', [TechadminController::class, 'event_edit']);
+   Route::post('admin/eventupdate/edit/{id}', [TechadminController::class, 'event_update'])->name('event-update');
+
+//add contact
+Route::get('admin/addcontact/list', [TechadminController::class, 'contact_list'])->name('addcontact-list');
+Route::post('admin/addcontact/add', [TechadminController::class, 'contact_add'])->name('add-contact');
+
+Route::get('admin/addcontact/edit/{id}', [TechadminController::class, 'contactedit']);
+Route::post('admin/addcontact/update/{id}', [TechadminController::class, 'contact_update'])->name('updatecontact');
+
+Route::get('admin/addcontact/delete/{id}', [TechadminController::class, 'contactdelete']);
+//resource
+Route::get('admin/resource/list', [TechadminController::class, 'resourcelist'])->name('resource-list');
+Route::post('admin/resource/list', [TechadminController::class, 'create_resource'])->name('create-resource');
+Route::get('admin/resource/delete/{id}', [TechadminController::class, 'resource_delete']);
+Route::get('admin/resourceedit/edit/{id}', [TechadminController::class, 'resource_edit']);
+Route::post('admin/resourceupdate/edit/{id}', [TechadminController::class, 'resource_update'])->name('resource-update');
 });
 
 
@@ -256,24 +312,22 @@ Route::get('/client', [TechController::class, 'client']);
 Route::get('/event', [TechController::class, 'event']);
 Route::get('/resource', [TechController::class, 'resource']);
 Route::get('/contact', [TechController::class, 'contact']);
-//Add service
-Route::get('admin/addservice/list', [TechadminController::class, 'service_list'])->name('ser-list');
-Route::post('admin/addservice/add', [TechadminController::class, 'service_add'])->name('add-service1');
+Route::post('/send-message', function(Request $request) {
+    // Handle the form submission here
+    // Create a new Mailstores instance with the validated data
+    $mailstore = new Mailstores([
+        'name' => $request->name,
+        'phone' =>$request->msg,
+        'msg' => $request->phone,
+    ]);
 
-Route::get('admin/addservice/edit/{id}', [TechadminController::class, 'edit']);
-Route::post('admin/addservice/update/{id}', [TechadminController::class, 'service_update'])->name('updateservice');
+    $mailstore->save();
 
-Route::get('admin/addservice/delete/{id}', [TechadminController::class, 'admin_add_delete']);
+    return redirect('/contact')->with('success', ' message sent successfully');
 
-//Add Teams
-Route::get('admin/addteams/list', [TechadminController::class, 'team_list'])->name('ser-list');
-Route::post('admin/addteams/add', [TechadminController::class, 'team_add'])->name('add-team');
-
-Route::get('admin/addteams/edit/{id}', [TechadminController::class, 'teamsedit']);
-Route::post('admin/addteams/update/{id}', [TechadminController::class, 'teams_update'])->name('updateteams');
-
-Route::get('admin/addteams/delete/{id}', [TechadminController::class, 'teamdelete']);
-
-
-
-
+})->name('send.message');
+Route::get('/singleevent/{id}', [TechController::class, 'singleevent'])->name('singleevent');
+// Route::get('/singleevent/{id}', [TechController::class, 'singleevent'])->name('singleevent');
+Route::get('/singleresource/{id}', [TechController::class, 'singleresource']);
+Route::get('/header', [TechController::class, 'get_logo1']);
+   

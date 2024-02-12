@@ -90,7 +90,7 @@ class BlogController extends Controller
             Gallery::create([
                 'image' => $filename,
             ]);
-            return redirect('admin/logo/logo')->with('success', 'content Blog uploaded successfully.');
+            return redirect('admin/logo/logo')->with('success', ' uploaded successfully.');
         }
 
         return response()->json(['error' => 'No images selected'], 400);

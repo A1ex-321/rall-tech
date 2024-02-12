@@ -144,20 +144,48 @@
     </li><!-- End Dashboard Nav -->
     @endif
     @endauth
+    @auth
+    @if(auth()->user()->role == 1)
     <li class="nav-item">
+      <a href="{{ route('blogsco-list') }}" class="nav-link {{ request()->is('admin/event/*') ? '' : 'collapsed' }}">
+        <i class="bi bi-layout-text-window-reverse" aria-hidden="true"></i><span>Events</span>
+      </a>
+    </li>
+    @endif
+    @endauth
+    @auth
+    @if(auth()->user()->role == 1)
+    <li class="nav-item">
+      <a href="{{ route('addcontact-list') }}" class="nav-link {{ request()->is('admin/addcontact/*') ? '' : 'collapsed' }}">
+        <i class="bi bi-grid" aria-hidden="true"></i><span>Contact</span>
+      </a>
+    </li>
+    @endif
+    @endauth
+    @auth
+    @if(auth()->user()->role == 1)
+    <li class="nav-item">
+      <a href="{{ route('resource-list') }}" class="nav-link {{ request()->is('admin/resource/*') ? '' : 'collapsed' }}">
+        <i class="bi bi-journal-text" aria-hidden="true"></i><span>Resource</span>
+      </a>
+    </li>
+    @endif
+    @endauth
+    <!-- <li class="nav-item">
       <a href="{{route('blog-list')}}" class="nav-link {{ request()->segment(2) === 'blog' ? '' : 'collapsed' }}">
         <i class="bi bi-journal-text"></i><span>Work</span>
       </a>
-    </li><!-- End Forms Nav -->
-    @auth
+    </li> -->
+    <!-- End Forms Nav -->
+    <!-- @auth
     @if(auth()->user()->role == 1)
     <li class="nav-item">
       <a href="{{ route('blogsco-list') }}" class="nav-link {{ request()->is('admin/blogseo/*') ? '' : 'collapsed' }}">
         <i class="bi bi-layout-text-window-reverse" aria-hidden="true"></i><span>SEO Blog</span>
       </a>
-    </li><!-- End Tables Nav -->
+    </li>
     @endif
-    @endauth
+    @endauth -->
 
     @auth
     @if(auth()->user()->role == 1)

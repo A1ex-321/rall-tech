@@ -79,12 +79,6 @@
     </div>
 </div>
 
-
-
-                                <!-- <div class="form-group">
-                                    <label for="exampleInputEmail1">multiple Image<span style="color:red">*</span></label>
-                                    <input type="file" id="imageInput" name="image" accept="image/*" multiple>
-                                </div> -->
                                 <div id="preview"></div>
 
                                 <!-- /.card-body -->

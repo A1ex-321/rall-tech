@@ -219,169 +219,33 @@
     </div>
 </section><!--====== End breadcrumbs-section ======-->
 <div class="container-fluid">
-    <div class="blog-card container-fluid">
-        <div class="meta">
-        <div class="photo" style="background-image: url('{{ asset('public/tech/assets/images/event.jpeg') }}')"></div>
-        </div>
-        <div class="description">
-          <h1>MSME registered
-            -
-            RAALTECH Solutions</h1>
-          <h2>Raal Tech Solution</h2>
-          <p> recognized by the Ministry of
-            Small, Medium and Micro Enterprises, Govt. of India.</p>
-          <p class="read-more">
-            <a href="events1.html">Read More</a>
-          </p>
-        </div>
-      </div>
-      <div class="blog-card alt">
-        <div class="meta">
-        <div class="photo" style="background-image: url('{{ asset('public/tech/assets/images/WhatsApp Image 2023-09-24 at 7.22.48 AM (3).jpeg') }}')"></div>
+    @foreach($getRecord as $index => $record)
+        @if($index % 2 == 0)
+            <article class="blog-card container-fluid">
+        @else
+            <article class="blog-card alt">
+        @endif
+            <header class="meta">
+                <div class="photo" style="background-image: url('{{ asset('public/images/' . $record->image) }}')" style="object-fit:cover"></div>
+            </header>
+            <section class="description">
+                <h1>{{ $record->title }}</h1>
+                <h2>{{ $record->tech }}</h2>
+                <p>{{ $record->description }}</p>
+                <p class="read-more">
+                <a href="{{ route('singleevent', ['id' => $record->id]) }}" data-id="{{ $record->id }}" target="_blank">Read More</a>
 
-         
-        </div>
-        <div class="description">
-          <h1>ISO
-            -
-            RAALTECH Solutions</h1>
-          <h2>Raal Tech Solution</h2>
-          <p>successfully obtained an ISO 9001:2015 quality
-            management certificate through various audits and confirmation of
-            standards practiced at the company
-            .</p>
-          <p class="read-more">
-            <a href="events1.html">Read More</a>
-          </p>
-        </div>
-      </div>
-    <div class="blog-card">
-        <div class="meta">
-        <div class="photo" style="background-image: url('{{ asset('public/tech/assets/images/MSME.jpg') }}')"></div>
+                </p>
+            </section>
+        </article>
+    @endforeach
+</div>
+
+
 
         
-        </div>
-        <div class="description">
-          <h1>Press
-            Conference on IPR</h1>
-          <h2>Raal Tech Solution</h2>
-          <p>Dr Matheswaran Alagu, Technical Lead of
-            RAALTECH Solutions
-           
-             attended an
-            insightful press meeting
-            and
-           
-             deliberately
-            insisted
-            on
-            the crucial role of
-            Intellectual Property Rights (IPR) in shaping our society, especially for
-            science
-            and engineering domain people.
-            The press meeting provided an excellent platform to raise awareness about
-            the importance of IPR.</p>
-          <p class="read-more">
-            <a href="events1.html">Read More</a>
-          </p>
-        </div>
-      </div>
-      <div class="blog-card alt">
-        <div class="meta">
-        <div class="photo" style="background-image: url('{{ asset('public/tech/assets/images/msme1.jpg') }}')"></div>
-
-         
-        </div>
-        <div class="description">
-          <h1>Inauguration
-           
-            of
-            IPR Cell at
-            GCT
-            , Coimbatore</h1>
-          <h2>Raal Tech Solution</h2>
-          <p>Dr Matheswaran Alagu, Technical Lead of
-            RAALTECH Solutions
-            invited for
-            the
-            inaugura
-            tion of the Intellectual Property Rights (IPR) Cell
-            . He delivered the guest lecture
-            on
-            "EMERGING TRENDS IN INTELLECTUAL PROPERTY RIGHTS AND ITS IMPACTS ON
-            ENGINEERING AND TECHNOLOGY" September 15th, 2023.</p>
-          <p class="read-more">
-            <a href="events1.html">Read More</a>
-          </p>
-        </div>
-      </div>
-    <div class="blog-card">
-        <div class="meta">
-        <div class="photo" style="background-image: url('{{ asset('public/tech/assets/images/NSIC.jpg') }}')"></div>
-
+      
         
-        </div>
-        <div class="description">
-          <h1>MSME program</h1>
-          <h2>Raal Tech Solution</h2>
-          <p> Dr Matheswaran Alagu, Technical Lead of
-            RAALTECH Solutions
-            invited as a
-            Panel Member for the Indovation (Indian
-            Innovation
-            )/Consortium at the IIC
-            Regional Meet 2K23 hosted by Nehru Institute of Technology, Coimbatore!</p>
-            <p>He
-              shared
-             
-              insights on IPR
-              portfolio management for startups with
-              Industrialists, Startups, and fellow Technocrats</p>
-            <p>Shri Dipan Sahu, Assistant Innovation Director from the Ministry of
-              Education, Innovation Cell & AICTE, 
-              Government of India
-              
-              felicitates<br>
-              
-             
-              Dr Matheswaran Alagu
-              </p>
-          <p class="read-more">
-            <a href="events1.html">Read More</a>
-          </p>
-        </div>
-      </div>
-      <div class="blog-card alt">
-        <div class="meta">
-        <div class="photo" style="background-image: url('{{ asset('public/tech/assets/images/press conference.jpg') }}')"></div>
-
-         
-        </div>
-        <div class="description">
-          <h1>NSIC program
-           </h1>
-          <h2>Raal Tech Solution</h2>
-          <p>Dr Matheswaran Alagu, Technical Lead of
-            RAALTECH Solutions
-            had the
-            privilege of being invited to deliver the guest lecture at the "Green Energy Technology"
-            training program, hosted by The National Small Industries Corporation (NSIC), Hyderabad, a
-            Government of India organization, on October 13, 2023.</p>
-            <p>He
-              shared insights and knowledge on the topic of "SOLAR PV POWER PLANT PROJECT
-              MANAGEMENT
-              -
-              A Case Study Approach"
-              with
-              a
-              diverse set of audiences
-              entrepreneurs,
-              students, and professors</p>
-          <p class="read-more">
-            <a href="events1.html">Read More</a>
-          </p>
-        </div>
-      </div>
-    </div>
+    
 
 @include('tech.layout.footer')

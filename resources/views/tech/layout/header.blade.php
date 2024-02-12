@@ -10,7 +10,8 @@
     <!--====== Title ======-->
     <title>Raal Tech</title>
     <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="{{ asset('public/tech/assets/images/newlogo.png') }}" type="image/png">
+    <link rel="shortcut icon" href="" type="image/png">
+
     <!--====== Bootstrap css ======-->
     <link rel="stylesheet" href="{{ asset('public/tech/assets/css/bootstrap.min.css')}}">
     <!--====== Flaticon css ======-->
@@ -435,7 +436,8 @@
                             <div class="site-branding">
                                 <div class="brand-logo">
                                     <a href="{{ url('/') }}">
-                                        <img src="{{ asset('public/tech/assets/images/newlogo.png') }}" alt="Logo" style="height: 150px; width: 250px; padding: 15px;">
+                                    <img id="logo-img1" src="" alt="Logo" style="height: 150px; width: 250px; padding: 15px;">
+
                                     </a>
                                 </div>
 

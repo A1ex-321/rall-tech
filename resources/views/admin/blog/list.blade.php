@@ -79,6 +79,7 @@
         </div>
     </div>
 </section>
+@include('admin.layouts.message')
 
 
     <!-- Main content -->

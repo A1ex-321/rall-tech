@@ -4,7 +4,8 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="widget about-widget mb-40">
-                    <img src="{{ asset('public/tech/assets/images/newlogo.png') }}" alt="" style="height: 150px; width: 250px;">
+                    <img id="logo-img" src="" alt="" style="height: 150px; width: 250px;">
+
 
                         <p style="color: black;">Our journey began with a commitment to provide comprehensive
                             solutions to protect and leverage your innovations.
@@ -37,9 +38,9 @@
                         <h4 class="widget-title" style="color: black;">Quick Links</h4>
                         <ul class="widget-link" style="color: black;">
                             <li><a href="{{ url('/') }}" style="color: black;">Home</a></li>
-                            <li><a href="{{ url('/') }}" style="color: black;">About Us</a></li>
-                            <li><a href="{{ url('/') }}" style="color: black;">Services </a></li>
-                            <li><a href="{{ url('/') }}" style="color: black;"> Team</a></li>
+                            <li><a href="{{ url('/about') }}" style="color: black;">About Us</a></li>
+                            <li><a href="{{ url('/service') }}" style="color: black;">Services </a></li>
+                            <li><a href="{{ url('/team') }}" style="color: black;"> Team</a></li>
 
                         </ul>
                     </div>
@@ -51,12 +52,12 @@
                         <ul class="widget-link" style="color: black;">
                             <li><a href="{{ url('/') }}" style="color: black;"></a></li>
                             <li><a href="{{ url('/') }}" style="color: black;"></a></li>
-                            <li><a href="{{ url('/') }}" style="color: black;">Clients</a></li>
-                            <li><a href="{{ url('/') }}" style="color: black;"> Events & Achivements</a></li>
+                            <li><a href="{{ url('/client') }}" style="color: black;">Clients</a></li>
+                            <li><a href="{{ url('/event') }}" style="color: black;"> Events & Achivements</a></li>
                             <!-- <li><a href="career.html" style="color: black;">Careers</a></li> -->
-                            <li><a href="{{ url('/') }}" style="color: black;">Resources</a></li>
+                            <li><a href="{{ url('/resource') }}" style="color: black;">Resources</a></li>
 
-                            <li><a href="{{ url('/') }}" style="color: black;">Contact </a></li>
+                            <li><a href="{{ url('/contact') }}" style="color: black;">Contact </a></li>
                         </ul>
                     </div>
                 </div>
@@ -138,6 +139,37 @@
     </div>
 </footer><!--====== End Footer ======-->
     <!--====== back-to-top ======-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Define the fetchAndUpdateLogo function
+        function fetchAndUpdateLogo() {
+            $.ajax({
+                url: '/header', // Your route URL
+                type: 'GET',
+                success: function(response) {
+                    if (response.image) {
+                        console.log("data logo", response.image);
+    $('#logo-img').attr('src', response.image);
+    $('#logo-img1').attr('src', response.image);
+    $('link[rel="shortcut icon"]').attr('href', response.image); // Update favicon
+
+                    } else {
+                        console.error('No image found');
+                    }
+                },
+                error: function(error) {
+                    console.error('Error fetching logo:', error.responseText);
+                }
+            });
+        }
+
+        // Call the fetchAndUpdateLogo function
+        fetchAndUpdateLogo();
+    });
+</script>
+
     <a href="#" class="back-to-top"><i class="flaticon-up-arrow-angle"></i></a>
     <!--====== Jquery js ======-->
     <script src="{{ asset('public/tech/assets/js/vendor/modernizr-3.6.0.min.js') }}"></script>

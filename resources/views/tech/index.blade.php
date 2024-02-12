@@ -1327,10 +1327,9 @@
 
 
 
-    <section class="new-features-area pt-130 pb-130">
+    <!-- <section class="new-features-area pt-130 pb-130">
         <div class="container">
             <div class="new-row no-gutters" id="new-features-slider">
-                <!-- Slide 1 -->
                 <div class="new-features-column col-lg-4 col-md-6 col-sm-12 animated-feature">
                     <div class="new-features-item text-center">
                         <div class="new-features-icon" style="margin: auto;">
@@ -1340,7 +1339,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Slide 2 -->
                 <div class="new-features-column col-lg-4 col-md-6 col-sm-12 animated-feature">
                     <div class="new-features-item text-center">
                         <div class="new-features-icon" style="margin: auto;">
@@ -1350,7 +1348,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Slide 3 -->
                 <div class="new-features-column col-lg-4 col-md-6 col-sm-12 animated-feature">
                     <div class="new-features-item text-center">
                         <div class="new-features-icon" style="margin: auto;">
@@ -1360,7 +1357,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Slide 4 -->
                 <div class="new-features-column col-lg-4 col-md-6 col-sm-12 animated-feature">
                     <div class="new-features-item text-center">
                         <div class="new-features-icon" style="margin: auto;">
@@ -1370,7 +1366,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Slide 5 -->
                 <div class="new-features-column col-lg-4 col-md-6 col-sm-12 animated-feature ">
                     <div class="new-features-item text-center">
                         <div class="new-features-icon " style="margin: auto;">
@@ -1382,7 +1377,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="cta-area-v1      pb-110">
         <div class="container">
@@ -1396,7 +1391,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="button-box">
-                            <a href="contact.html" class="main-btn">Contact Now</a>
+                        <a href="{{ url('/contact') }}" class="main-btn">Contact Now</a>
                         </div>
                     </div>
                 </div>
