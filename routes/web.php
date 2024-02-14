@@ -222,7 +222,7 @@ Route::post('admin/client/test', [TechadminController::class, 'test_add'])->name
 Route::get('admin/client/edit/{id}', [TechadminController::class, 'clientedit']);
 Route::post('admin/client/update/{id}', [TechadminController::class, 'client_update'])->name('updateclient');
 
-Route::get('admin/client/delete/{id}', [TechadminController::class, 'clientdelete']);
+Route::get('admin/addclient/deleteclient/{id}', [TechadminController::class, 'deleteclient']);
 
 Route::get('admin/test/delete/{id}', [TechadminController::class, 'testdelete']);
    //   event blog
@@ -246,6 +246,16 @@ Route::post('admin/resource/list', [TechadminController::class, 'create_resource
 Route::get('admin/resource/delete/{id}', [TechadminController::class, 'resource_delete']);
 Route::get('admin/resourceedit/edit/{id}', [TechadminController::class, 'resource_edit']);
 Route::post('admin/resourceupdate/edit/{id}', [TechadminController::class, 'resource_update'])->name('resource-update');
+
+//Add Design and logo
+Route::get('admin/design/list', [TechadminController::class, 'logo_list'])->name('logo-list');
+Route::post('admin/design/add', [TechadminController::class, 'logo_add'])->name('add-logo');
+
+Route::get('admin/design/edit/{id}', [TechadminController::class, 'logoedit']);
+
+
+Route::get('admin/design/deletelogo/{id}', [TechadminController::class, 'deletelogo']);
+
 });
 
 

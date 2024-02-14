@@ -14,6 +14,7 @@ use App\Models\Client;
 use App\Models\blogsco;
 use App\Models\raalcontact;
 use App\Models\resource;
+use App\Models\Design;
 
 
 
@@ -162,12 +163,21 @@ class TechadminController extends Controller
     {
         $user = Client::find($id);
        
-        $user->title=$request->title;
+        if ($request->hasFile('title')) {
+            $images = $request->file('title');
+
+            $filename = time() . '_' . str_replace(' ', '_', $images->getClientOriginalName());
+            $images->move(public_path('images'), $filename);
+        }    
+        else{
+            $user->title=$user->title;
+        }
+        $user->title=$filename;
         $user->description=$request->description;
         $user->save();
         return redirect('admin/client/list')->with('success', 'updated successfully.');
     }
-    public function clientdelete($id)
+    public function deleteclient($id)
     {
         $user = Client::find($id);
         $user->delete();
@@ -181,9 +191,15 @@ class TechadminController extends Controller
     }
     public function test_add(Request $request)
     {
+        if ($request->hasFile('title')) {
+            $images = $request->file('title');
+
+            $filename = time() . '_' . str_replace(' ', '_', $images->getClientOriginalName());
+            $images->move(public_path('images'), $filename);
+        }
         
         Client::create([
-            'title' => $request->title,
+            'title' => $filename ,
             'description' => $request->description,
             'is_client' => 1,
         ]);
@@ -198,7 +214,7 @@ class TechadminController extends Controller
 
     public function bloglist(Request $request)
     {
-        Blogimage::truncate();
+        // Blogimage::truncate();
         $data['getRecord'] = blogsco::all();
         return view('admin.sco.blogsco', $data);
     }
@@ -228,17 +244,10 @@ class TechadminController extends Controller
         } else {
             $data->slug = $request->title;
         }
-        if ($request->multiimage) {
-            $idArray = explode(',', $request->multiimage);
-            $filenames = Blogimage::whereIn('id', $idArray)->pluck('filename');
-            $filenamesString = implode(',', $filenames->toArray());
-            $data->multiimage = $filenamesString;
-        }
+ 
         $data->save();
         // $blog->content_blog = $request->content_blog;
-        $delete = $request->multiimage;
-        $idArray = explode(',', $delete);
-        Blogimage::whereIn('id', $idArray)->delete();
+
         return redirect('admin/event/eventlist')->with('success', ' Added successfully.');
     }
     public function event_delete($id, Request $request)
@@ -249,17 +258,10 @@ class TechadminController extends Controller
     }
     public function event_edit($id, Request $request)
     {
-        Blogimage::truncate();
         
         $data['getRecord'] = blogsco::find($id);
-        if ($data['getRecord'] && $data['getRecord']->multiimage) {
-            $imageArray = explode(',', $data['getRecord']->multiimage);
-            foreach ($imageArray as $imageName) {
-                $blogImage = new BlogImage;
-                $blogImage->filename = $imageName;
-                $blogImage->save();
-            }
-        }
+     
+        
         return view('admin.sco.edit_blogsco', $data);
     }
     public function event_update($id, Request $request)
@@ -279,23 +281,9 @@ class TechadminController extends Controller
         } else {
             $data->image = $data->image;
         }
-        if ($request->multiimage) {
-            $idArray = explode(',', $request->multiimage);
-            $existingFilenames = Blogimage::whereIn('id', $idArray)->pluck('filename')->toArray();
-
-            $newFilenames = array_diff($idArray, $existingFilenames);
-
-            $data->multiimage = implode(',', $existingFilenames);
-
-            foreach ($newFilenames as $filename) {
-                $blogImage = new Blogimage;
-                $blogImage->filename = $filename;
-                $blogImage->save();
-            }
-        }
+   
         $data->save();
 
-        Blogimage::truncate();
         return redirect('admin/event/eventlist')->with('success', ' updated');
     }
     //contact
@@ -397,5 +385,40 @@ public function resourcelist(Request $request)
 
         return redirect('admin/resource/list')->with('success', ' updated');
     }
+
+
+    //design
+    public function logo_list()
+    {
+        $data['getRecord'] = Design::all();
+
+
+        $data['header_title'] = "Admin List";
+
+        return view('admin.tech.about', $data);
+    }
+    public function logo_add(Request $request)
+    {
+        if ($request->hasFile('image')) {
+            $images = $request->file('image');
+
+            $filename = time() . '_' . str_replace(' ', '_', $images->getClientOriginalName());
+            $images->move(public_path('images'), $filename);
+        }
+        Design::create([
+            'image' => $filename,
+        ]);
+        return redirect('admin/design/list')->with('success', 'uploaded successfully.');
+    }
+
+    public function deletelogo($id)
+    {
+        $user = Design::find($id);
+        $user->delete();
+        return redirect()->back()->with('success', 'Deleted');
+    }
+    
+
+
    
 }

@@ -8,7 +8,7 @@
                     <div class="breadcrumbs-content">
                         <h1>About Us</h1>
                         <ul class="link">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a >Home</a></li>
                             <li class="active">About</li>
                         </ul>
                     </div>
@@ -112,7 +112,7 @@
         </div>
     </section><!--====== End Counter section ======-->
     <section class="team-area-v3 team-area-v4 bg_cover"
-         style="background-image: url({{ asset('public/tech/assets/images/bg/pattern-bg-2.jpg') }}); height: 300px;">
+         style="background-image: url({{ asset('public/tech/assets/images/bg/pattern-bg-2.jpg') }}); height: 400px;">
 
         <div class="container">
             <div class="row justify-content-center">
@@ -131,79 +131,19 @@
         <div class="custom-container">
             <div class="">
                 <div class="row team-slide-one" style="margin-top: -50px;">
-                    <div class="col-lg-3 col-md-6 col-sm-12">
+                @foreach($logo as $image)
+
+                    <div class="col-lg-12 col-md-6 col-sm-12">
                         <div class="team-item text-center mb-55">
-                            <div class="" style="object-fit: cover; ">
-                            <img src="{{ asset('public/tech/assets/images/IAENG1.png') }}" alt="" style="height: 50px; width: 200px;">
+                        <img src="{{ asset('public/images/' . $image->image) }}" alt="" style="height: 150px; width: 50%; margin: auto; display: block;">
 
-                                <div class="">
-                                    <div class="overlay-content">
-                                        <a href="#" class="icon"><i class="icofont-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
+
 
                         </div>
                     </div>
+                    @endforeach
 
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="team-item text-center mb-55">
-                            <div class="">
-                            <img src="{{ asset('public/tech/assets/images/IFERP.jfif') }}" alt="" style="height: 50px; width: 200px;">
-
-                                <div class="">
-                                    <div class="overlay-content">
-                                        <a href="#" class="icon"><i class="icofont-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="team-item text-center mb-55">
-                            <div class="" style="object-fit: cover; aspect-ratio: 1/1; padding: 10px;">
-                            <img src="{{ asset('public/tech/assets/images/NIPAM.jpg') }}" alt="" style="height: 50px; width: 200px;">
-
-                                <div class="">
-                                    <div class="overlay-content">
-                                        <a href="#" class="icon"><i class="icofont-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="team-item text-center mb-185">
-                            <div class="team image" style="object-fit: cover; aspect-ratio: 1/1; padding: 10px;">
-                            <img src="{{ asset('public/tech/assets/images/TSN-Certification.png') }}" alt="" style="height: 80px; width: 100px;">
-
-                                <div class="">
-                                    <div class="overlay-content">
-                                        <a href="#" class="icon"><i class="icofont-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="team-item text-center mb-55">
-                            <div class="team-image" style="object-fit: cover; aspect-ratio: 1/1; padding: 10px;">
-                            <img src="{{ asset('public/tech/assets/images/IEOM 1.png') }}" alt="" style="height: 80px; width: 100px;">
-
-                                <div class="">
-                                    <div class="overlay-content">
-                                        <a href="#" class="icon"><i class="icofont-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+                    
                 </div>
 
             </div>

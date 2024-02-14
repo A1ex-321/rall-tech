@@ -45,21 +45,21 @@
                                 {{ csrf_field() }}
                                 <div class="form-group">
                                     <label for="recipient-name" class="col-form-label">Title</label>
-                                    <input type="text" class="form-control" id="recipient-name" name="title" required>
+                                    <input type="text" class="form-control" id="recipient-name" name="title" >
                                 </div>
                                 <div class="form-group">
                                     <label for="recipient-name" class="col-form-label">Address</label>
-                                    <textarea id="message" name="address" rows="4" cols="50" required></textarea><br>
+                                    <textarea id="message" name="address" rows="4" cols="50" ></textarea><br>
 
                                 </div>
 
                                 <div class="form-group">
                                     <label for="recipient-name" class="col-form-label">Email</label>
-                                    <input type="email" class="form-control" id="recipient-name" name="email" required>
+                                    <input type="email" class="form-control" id="recipient-name" name="email" >
                                 </div>
                                 <div class="form-group">
                                     <label for="recipient-name" class="col-form-label">Number</label>
-                                    <input type="text" class="form-control" id="recipient-name" name="number" required>
+                                    <input type="text" class="form-control" id="recipient-name" name="number" >
                                 </div>
                         </div>
                         <div class="modal-footer">
@@ -127,17 +127,17 @@
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="recipient-name" class="col-form-label">Address</label>
-                                                                <textarea id="message1" name="address" rows="4" cols="50" required></textarea><br>
+                                                                <textarea id="message1" name="address" rows="4" cols="50" ></textarea><br>
 
                                                             </div>
 
                                                             <div class="form-group">
                                                                 <label for="recipient-name" class="col-form-label">Email</label>
-                                                                <input type="email" class="form-control" id="email" name="email" required>
+                                                                <input type="email" class="form-control" id="email" name="email" >
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="recipient-name" class="col-form-label">Number</label>
-                                                                <input type="text" class="form-control" id="number" name="number" required>
+                                                                <input type="text" class="form-control" id="number" name="number" >
                                                             </div>
 
                                                             <!-- Add more input fields for other data if needed -->

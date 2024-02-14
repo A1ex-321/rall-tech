@@ -294,12 +294,12 @@
                                         <textarea name="content" id="editor" style="height: 250px; visibility: hidden;">{{$getRecord->content}}</textarea>
                                     </div>
                                     <input type="hidden" id="imageIds" name="multiimage" value="">
-                                    <div class="col-md-12">
+                                    <!-- <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Multiple Image<span style="color:red">*</span></label>
                                                     <input type="file" id="imageInput" name="images[]" class="form-control" value="" multiple>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         
 
                                         <div id="preview"></div>

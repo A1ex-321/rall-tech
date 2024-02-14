@@ -24,7 +24,7 @@ margin-left: 90px;        }
                 <div class="breadcrumbs-content">
                     <h1>Our Team</h1>
                     <ul class="link">
-                        <li><a href="history.html">Home</a></li>
+                        <li><a>Home</a></li>
                         <li class="active">Our Team</li>
                     </ul>
                 </div>
@@ -53,7 +53,7 @@ margin-left: 90px;        }
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="team-item mb-40">
                         <div class="team-img" style="object-fit: cover; aspect-ratio: 2/1;">
-                            <img src="{{ asset('public/images/' . $record->image) }}" alt="{{ $record->name }}" style="height: 200px; width: 200px; object-fit: cover;">
+                            <img src="{{ asset('public/images/' . $record->image) }}" alt="{{ $record->name }}" style="height: 400px; width: 200px; object-fit: cover;">
                         </div>
                         <div class="team-info">
                             <div class=""></div>

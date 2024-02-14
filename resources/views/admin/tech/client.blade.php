@@ -73,8 +73,9 @@
                             <form action="{{ route('add-test') }}" method="post" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <div class="form-group">
-                                    <label for="message-text" class="col-form-label">Title:</label>
-                                    <input type="text" class="form-control" id="recipient-name" name="title" required>
+                                    <label for="message-text" class="col-form-label">photo:</label>
+                                    
+                                    <input type="file" class="form-control" id="recipient-name" name="title" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="message-text" class="col-form-label">Description:</label>
@@ -117,7 +118,7 @@
                                                     <td>
 
 
-                                                        <a onclick="return confirm('Are you sure you want to delete?')" href="{{url('admin/addteams/delete/'.$value->id)}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                                        <a onclick="return confirm('Are you sure you want to delete?')" href="{{url('admin/addclient/deleteclient/'.$value->id)}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -148,7 +149,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>Title</th>
+                                                    <th>photo</th>
                                                     <th>Description</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -157,7 +158,7 @@
                                                 @foreach($getRecord1 as $value)
                                                 <tr>
                                                     <td>{{$value->id}}</td>
-                                                    <td>{{$value->title}}</td>
+                                                    <td><img src="{{ asset('public/images/' . $value->title) }}" style="width:100px;height:60px;" alt="Image"></td>
                                                     <td>{{$value->description}}</td>
 
                                                     <td>
@@ -183,9 +184,10 @@
                                                         <form id="editForm" method="post" enctype="multipart/form-data">
                                                             @csrf
                                                             <div class="form-group">
-                                                                <label for="editTitle">Title</label>
-                                                                <input type="text" class="form-control" id="editTitle" name="title">
+                                                                <label for="editTitle">photo</label>
+                                                                <input type="file" class="form-control" id="recipient-name" name="title" >
                                                             </div>
+                                                            <img src="{{ asset('public/images/' . $value->title) }}" style="width:100px;height:60px;" alt="Image" id="da">
 
                                                             <div class="form-group">
                                                                 <label for="editImage" class="col-form-label">Description:</label>
@@ -349,7 +351,7 @@
                 type: "GET",
                 url: "{{ url('admin/client/edit') }}" + '/' + id,
                 success: function(response) {
-                    $('#editTitle').val(response.title);
+                    $('#da').attr('src', "{{ asset('public/images/') }}" + '/' + response.title);
                     $('#editdescription').val(response.description);
                    
                     // Update other input fields as needed

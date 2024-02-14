@@ -10,6 +10,8 @@ use App\Models\resource;
 use App\Http\Controllers\Controller;
 use App\Models\blogsco;
 use App\Models\raalcontact;
+use App\Models\Design;
+
 use App\Models\Gallery;
 
 
@@ -18,10 +20,21 @@ use Illuminate\Support\Facades\Auth;
 class TechController extends Controller
 {
     public function home(Request $request){
-        return view('tech.index');
+        $data['service'] = Addservice::all();
+        $data['team'] = Team::all();
+        $data['image'] = Client::where('is_client', 0)->get();
+        $data['test'] = Client::where('is_client', 1)->get();
+        $data['event'] = blogsco::get();
+        $data['resource'] = resource::get();
+
+
+        return view('tech.index', $data);
     }
+    
     public function about(Request $request){
-        return view('tech.about');
+        $data['logo'] = Design::all();
+
+        return view('tech.about',$data);
     }
     public function service(Request $request){
         $data['getRecord'] = Addservice::all();

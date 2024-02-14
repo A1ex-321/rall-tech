@@ -1,5 +1,5 @@
 @include('tech.layout.header')
-<style>a {
+<style>#all a {
     color: blue; /* Sets the text color to blue */
     text-decoration: underline; /* Adds underline */
 }</style>
@@ -25,15 +25,28 @@
 <div class="container" id="data2">
    
         <div class="row">
-        @foreach(explode(',', $getRecord->multiimage) as $filename)
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="team-item mb-40">
-                    <div class="team-img" style="object-fit: cover; aspect-ratio: 2/1;">
-                        <img src="{{ asset('public/images/' . $filename) }}" alt="" style="height: 250px; width: 100%; object-fit: cover;" class="image-hover">
+        @if($getRecord)
+                <div class="blog-post-item mb-50">
+                    <div class="post-thumbnail">
+                        <img src="{{ asset('public/images/' . $getRecord->image) }}" style="width:100%;height:350px;object-fit:cover;" alt="">
                     </div>
+                    <div class="entry-content">
+                        <div class="post-meta d-flex justify-content-between">
+                            <ul class="meta-link">
+                                <li><span><i class="icofont-user-alt-7"></i><a>{{ \Carbon\Carbon::parse($getRecord->created_at)->format('F j, Y') }}</a></span></li>
+                            </ul>
+                        </div>
+                        <h3 class="title"><a>{{ $getRecord->title }}</a></h3>
+                        <p>{{ $getRecord->description }}</p>
+                    </div>
+                    <div class="ckeditor-content" id="all">
+                        {!! str_replace('<img', '<img style="width: 600px; height: 300px;"' , $getRecord->content) !!}
+                    </div>
+
                 </div>
-            </div>
-            @endforeach
+                @else
+                <p>No record found for the given ID.</p>
+                @endif
         </div>
     
 </div>

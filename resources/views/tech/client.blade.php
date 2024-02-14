@@ -1,10 +1,14 @@
 @include('tech.layout.header')
 <style>
-   .team-img:hover img {
-    background-color: lightgray; /* Example hover effect: changing background color to light gray */
-    transform: scale(1.1); /* Increase the image size by 10% on hover */
+    .team-img:hover img {
+        background-color: lightgray;
+        /* Example hover effect: changing background color to light gray */
+        transform: scale(1.1);
+        /* Increase the image size by 10% on hover */
+        transition: transform 0.5s ease;
+        /* Smooth transition for the scale effect */
+    }
 
-}
 
 
     @media only screen and (max-width: 767px) {
@@ -43,34 +47,37 @@
         }
     }
 
-    .client {
+    /* .client {
         display: none;
-    }
-    #data {
-        display: none;
-    }
+    } */
+    #data2 {
+            display: none;
+        }
+ 
 
     @media only screen and (max-width: 767px) {
-        
-    #data2 {
-        display: none;
-    }
-    #data {
-        display: block;
-    }
+
+        #data2 {
+            display: block;
+        }
+
+        #data {
+            display: none;
+        }
+
         #data .row {
             display: flex;
             flex-wrap: wrap;
         }
+
         #data .col-lg-6 {
-            flex: 0 0 50%; /* Make each column take up 50% of the row width */
+            flex: 0 0 50%;
+            /* Make each column take up 50% of the row width */
             max-width: 50%;
         }
     }
 
-    @media only screen and (max-width: 767px) {
-        
-    }
+    @media only screen and (max-width: 767px) {}
 
     .testimonial-container {
         overflow: hidden;
@@ -103,37 +110,44 @@
             </div>
         </div>
     </div>
-     
+
 </div>
 <div class="container" id="data">
+    @php
+    $counter = 0;
+    @endphp
+    @foreach($getRecord as $record)
+        @if($counter % 5 == 0)
+            @if($counter != 0)
+            </div> <!-- Close previous container -->
+            @endif
+            <div class="container" style="display: flex; justify-content: center;">
+        @endif
+        <div class="card" style="padding: 30px; width: 45%; object-fit: contain; aspect-ratio: 1/1; margin-left: 10px;">
+            <img src="{{ asset('public/images/' . $record->image) }}" style="width:100px; margin-left:32px;" alt="">
+        </div>
+        @php
+        $counter++;
+        @endphp
+    @endforeach
+    </div> <!-- Close the last container -->
+</div>
+
+<div class="container" id="data2">
+
     <div class="row">
         @foreach($getRecord as $record)
-        <div class="col-lg-6 col-md-6 col-sm-12"> <!-- Use col-lg-6 instead of col-lg-3 to display two images per row on larger screens -->
-            <div class="team-item mb-40">
+        <div class="col-6">
                 <div class="team-img" style="object-fit: cover; aspect-ratio: 2/1;">
-                    <img src="{{ asset('public/images/' . $record->image) }}" alt="{{ $record->name }}" style="height: 150px; width: 100%; object-fit: cover;" class="image-hover">
+                    <img src="{{ asset('public/images/' . $record->image) }}" alt="{{ $record->name }}" style="height: 150px; width: 100%; object-fit: cover; padding:25px;" class="image-hover">
                 </div>
-            </div>
+            
         </div>
         @endforeach
     </div>
+
 </div>
-<div class="container" id="data2">
-   
-        <div class="row">
-            @foreach($getRecord as $record)
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="team-item mb-40">
-                    <div class="team-img" style="object-fit: cover; aspect-ratio: 2/1;">
-                        <img src="{{ asset('public/images/' . $record->image) }}" alt="{{ $record->name }}" style="height: 150px; width: 100%; object-fit: cover;" class="image-hover">
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    
-</div>
-  
+
 
 
 <!--====== Start Testimonial section ======-->
@@ -153,12 +167,15 @@
     <div class="container">
 
         <div class="row testimonial-slider-two" style="margin: auto;">
-        @foreach($getRecord1 as $record)
-    <div class="col-12 testimonial-card alt" style="height: 400px; margin-left: 40px;">
-        <h3 style="margin-left: 50px; margin-bottom: 50px;">{{ $record->title }}</h3>
-        <p class="testimonial-text">{{ $record->description }}</p>
-    </div>
-@endforeach
+            @foreach($getRecord1 as $record)
+            <div class="col-12 testimonial-card alt" style=" margin-left: 40px; ">
+                <div class="service-img">
+
+                    <img src="{{ asset('public/images/' . $record->title) }}" alt="" style="height: 100px; ; width:100px;margin-left: 130px; ">
+                </div>
+                <p class="testimonial-text">{{ $record->description }}</p>
+            </div>
+            @endforeach
 
         </div>
     </div>
@@ -168,97 +185,5 @@
 
 
 <!-- ====================mobile view============= -->
-<div class="client">
-    <section class="project-area-v3 pt-115 pb-12" id="project-filter">
-        <div class="container-fluid" style="margin-top: -100px;">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="filter-nav text-center mb-70">
-                        <ul class="filter-btn">
-                            <li data-filter="*" class="active">Our Clients</li>
 
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="container" style=" justify-content: center;">
-                <div class="row">
-                    <div class="col-6">
-                        <div class="card" style=" width: 100%; object-fit: cover; aspect-ratio: 1/1;">
-                            <img src="{{ asset('public/tech/assets/images/appollo.png') }}" alt="">
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="card" style="  width: 100%; object-fit: cover; aspect-ratio: 1/1; ">
-                            <img src="{{ asset('public/tech/assets/images/AR4techg.png') }}" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-
-                        <div class="card" style="width: 100%; object-fit: cover; aspect-ratio: 1/1; ">
-                            <img src="{{ asset('public/tech/assets/images/aram1.jpg') }}" alt="">
-                        </div>
-                    </div>
-
-
-                    <div class="col-6">
-
-                        <div class="card" style="width: 100%; object-fit: contain; aspect-ratio: 1/1;">
-                            <img src="{{ asset('public/tech/assets/images/iit.png') }}" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-
-                        <div class="card" style="width: 100%; object-fit: contain; aspect-ratio: 1/1;">
-                            <img src="{{ asset('public/tech/assets/images/near1.jpg') }}" alt="">
-                        </div>
-                    </div>
-
-
-
-                    <div class="col-6">
-
-                        <div class="card" style="width: 100%; object-fit: contain; aspect-ratio: 1/1;">
-                            <img src="{{ asset('public/tech/assets/images/jezh.jpeg') }}" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="card" style="width: 100%; object-fit: contain; aspect-ratio: 1/1;">
-                            <img src="{{ asset('public/tech/assets/images/logo TM.jpg') }}" alt="">
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="card" style="width: 100%; object-fit: contain; aspect-ratio: 1/1;">
-                            <img src="{{ asset('public/tech/assets/images/mas-solar-logo.png') }}" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="card" style="width: 100%; object-fit: contain; aspect-ratio: 1/1;">
-                            <img src="{{ asset('public/tech/assets/images/saveetha1.jpg') }}" alt="">
-                        </div>
-                    </div>
-
-                    <div class="col-6">
-                        <div class="card" style="width: 100%; object-fit: contain; aspect-ratio: 1/1;">
-                            <img src="{{ asset('public/tech/assets/images/Sema logo.png') }}" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section><!--====== End project-page-section ======-->
-
-
-
-</div>
 @include('tech.layout.footer')

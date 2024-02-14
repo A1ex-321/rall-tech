@@ -210,7 +210,7 @@
                 <div class="breadcrumbs-content">
                     <h1>Events & Achievements</h1>
                     <ul class="link">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a>Home</a></li>
                         <li class="active">Events & Achievements</li>
                     </ul>
                 </div>
@@ -226,7 +226,10 @@
             <article class="blog-card alt">
         @endif
             <header class="meta">
-                <div class="photo" style="background-image: url('{{ asset('public/images/' . $record->image) }}')" style="object-fit:cover"></div>
+            <a href="{{ route('singleevent', ['id' => $record->id]) }}">
+    <div data-id="{{ $record->id }}" class="photo" style="background-image: url('{{ asset('public/images/' . $record->image) }}'); object-fit: cover;"></div>
+</a>
+
             </header>
             <section class="description">
                 <h1>{{ $record->title }}</h1>

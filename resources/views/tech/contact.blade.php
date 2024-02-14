@@ -10,7 +10,7 @@
                 <div class="breadcrumbs-content">
                     <h1>Contact Us</h1>
                     <ul class="link">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a>Home</a></li>
                         <li class="active">Contact</li>
                     </ul>
                 </div>
@@ -68,7 +68,7 @@
                             <i class="icofont-headphone-alt-3"></i>
                         </div>
                         <div class="info">
-                            <p><a href="tel:+91{{$record->number}}">+91 {{$record->number}}</a></p>
+                            <p><a href="tel:+91{{$record->number}}"> {{$record->number}}</a></p>
                         </div>
                     </div>
                 </div>

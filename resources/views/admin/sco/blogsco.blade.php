@@ -107,10 +107,10 @@
                                                 <textarea name="content" id="editor" style="height: 250px; visibility: hidden;">{{ old('content') }}</textarea>
                                             </div>
                                             <div class="col-md-12">
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="exampleInputEmail1">Multiple Image<span style="color:red">*</span></label>
             <input type="file" id="imageInput" name="images[]" class="form-control" value="" multiple required>
-        </div>
+        </div> -->
     </div>
 </div>
 

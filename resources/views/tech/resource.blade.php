@@ -18,7 +18,7 @@
                         <div class="breadcrumbs-content">
                             <h1>Our Resources</h1>
                             <ul class="link">
-                                <li><a href="index.html">Home</a></li>
+                                <li><a>Home</a></li>
                                 <li class="active">Our Resources</li>
                             </ul>
                         </div>
@@ -36,7 +36,10 @@
                         @foreach($getRecord as $record)
 <div class="blog-post-item mb-50">
     <div class="post-thumbnail">
-        <img src="{{ asset('public/images/' . $record->image) }}" style="width:100%;height:350px;object-fit:cover;"alt="">
+    <a href="{{ url('/singleresource', $record->id) }}" style="display: block;">
+    <img src="{{ asset('public/images/' . $record->image) }}" style="width:100%;height:350px;object-fit:cover;" alt="">
+</a>
+
     </div>
     <div class="entry-content">
         <div class="post-meta d-flex justify-content-between">
@@ -55,18 +58,24 @@
                     <div class="col-lg-4">
                         <div class="sidebar-widget-area">
                            
-                            <div class="widget widget-recent-post mb-40">
+                            <div class="widget widget-recent-post mb-10">
                                 <h4 class="widget-title">Recent Post</h4>
                                 <ul class="recent-post-widget">
                                 @foreach($getRecord as $record1)
-                    <li class="post-thumbnail-content">
-                    <img src="{{ asset('public/images/' . $record1->image) }}" class="img-fluid" alt="">
+                    <li class="post-thumbnail-content" style="height: 100px; ">
+                    <img href="{{ url('/singleresource', $record->id) }}" src="{{ asset('public/images/' . $record1->image) }}" class="img-fluid" alt="" style="width:80px;height:80px;">
 
                         <div class="post-title-date">
-                        <h6><a href="{{ url('/singleresource', $record->id) }}">{{ $record1->title }}</a></h6>
-                            <span class="posted-on"><i class="fas fa-calendar-alt"></i>
-                                {{ \Carbon\Carbon::parse($record1->created_at)->format('F j, Y') }}
-                            </span>
+<div style="height: 50px; width:200px;overflow: hidden; text-overflow: ellipsis;"><h6 style="font-size: small;">
+    <a href="{{ url('/singleresource', $record->id) }}">{{ $record1->title }}</a>
+</h6></div>
+                        
+
+                        <span class="posted-on" style="font-size: smaller;">
+    <i class="fas fa-calendar-alt"></i>
+    {{ \Carbon\Carbon::parse($record1->created_at)->format('F j, Y') }}
+</span>
+
                         </div>
                     </li>
                 @endforeach

@@ -197,8 +197,26 @@
     @endif
     @endauth
 
-
     @auth
+    @if(auth()->user()->role == 1)
+    <li class="nav-item">
+      <a href="{{ route('logo-list') }}" class="nav-link {{ request()->is('admin/design/*') ? '' : 'collapsed' }}">
+        <i class="bi bi-grid" aria-hidden="true"></i><span>Design and Logo</span>
+      </a>
+    </li><!-- End Charts Nav -->
+    @endif
+    @endauth
+    <li class="nav-item">
+      <a href="" class="nav-link {{ request()->is('admin/design/*') ? '' : 'collapsed' }}">
+        <i class="" aria-hidden="true"></i><span></span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="" class="nav-link {{ request()->is('admin/design/*') ? '' : 'collapsed' }}">
+        <i class="" aria-hidden="true"></i><span></span>
+      </a>
+    </li>
+    <!-- @auth
     @if(auth()->user()->role == 1)
 
     <li class="nav-heading">SEO Pages</li>
@@ -210,7 +228,7 @@
       <a href="{{ route('sco-list') }}" class="nav-link {{ request()->is('admin/seo/*') ? '' : 'collapsed' }}">
         <i class="bi bi-question-circle" aria-hidden="true"></i><span>SEO link</span>
       </a>
-    </li><!-- End Charts Nav -->
+    </li>
     @endif
     @endauth
     @auth
@@ -219,7 +237,7 @@
       <a href="{{ route('home-list') }}" class="nav-link {{ request()->is('admin/home/*') ? '' : 'collapsed' }}">
         <i class="bi bi-person" aria-hidden="true"></i><span>Home</span>
       </a>
-    </li><!-- End Charts Nav -->
+    </li>
     @endif
     @endauth
     @auth
@@ -228,7 +246,7 @@
       <a href="{{ route('about-list') }}" class="nav-link {{ request()->is('admin/about/*') ? '' : 'collapsed' }}">
         <i class="fa fa-tasks" aria-hidden="true"></i><span>About As</span>
       </a>
-    </li><!-- End Charts Nav -->
+    </li>
     @endif
     @endauth
     @auth
@@ -237,7 +255,7 @@
       <a href="{{ route('service-list') }}" class="nav-link {{ request()->is('admin/service/*') ? '' : 'collapsed' }}">
         <i class="bi bi-bar-chart"></i><span>Service</span>
       </a>
-    </li><!-- End Charts Nav -->
+    </li>
     @endif
     @endauth
     @auth
@@ -246,7 +264,7 @@
       <a href="{{ route('contact-list') }}" class="nav-link {{ request()->is('admin/contact/*') ? '' : 'collapsed' }}">
         <i class="bi bi-bell"></i><span>Contact</span>
       </a>
-    </li><!-- End Charts Nav -->
+    </li>
     @endif
     @endauth
     @auth
@@ -255,7 +273,7 @@
       <a href="{{ route('scoblog-list') }}" class="nav-link {{ request()->is('admin/scoblog/*') ? '' : 'collapsed' }}">
         <i class="bi bi-question-circle"></i><span>SEO All Work</span>
       </a>
-    </li><!-- End Charts Nav -->
+    </li>
     @endif
     @endauth
     @auth
@@ -264,9 +282,9 @@
       <a href="{{ route('work-list') }}" class="nav-link {{ request()->is('admin/work/*') ? '' : 'collapsed' }}">
         <i class="fa fa-tasks"></i><span>SEO All Blog</span>
       </a>
-    </li><!-- End Charts Nav -->
+    </li>
     @endif
-    @endauth
+    @endauth -->
   </ul>
 
 </aside><!-- End Sidebar-->
