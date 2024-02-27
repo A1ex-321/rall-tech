@@ -22,7 +22,7 @@
             </div>
           
 
-<div class="container" id="data2">
+<div class="container" id="data">
    
         <div class="row">
         @if($getRecord)
@@ -56,8 +56,8 @@
     </section><!--====== End project-page-section ======-->
 
         <!--====== Start breadcrumbs-section ======-->
-        <div class="container" id="data" class="ckeditor-content">
-    {!! str_replace('<img', '<img style="width: 600px; height: 300px;"', $getRecord->content) !!}
+        <!-- <div class="container" id="data" class="ckeditor-content">
+    {!! str_replace('<img', '<img style="width: 600px; height: 300px;"', $getRecord->content) !!} -->
    
 
 
@@ -66,7 +66,7 @@
 </div>
 <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const blogListContainer = document.getElementById('data');
+            const blogListContainer = document.getElementById('all');
 
 const oembedContainers = blogListContainer.querySelectorAll('oembed');
 console.log("fddf",oembedContainers);

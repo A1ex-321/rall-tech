@@ -11,6 +11,7 @@
     <title>Raal Tech</title>
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="" type="image/png">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <!--====== Bootstrap css ======-->
     <link rel="stylesheet" href="{{ asset('public/tech/assets/css/bootstrap.min.css')}}">

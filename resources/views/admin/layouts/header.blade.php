@@ -6,17 +6,20 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
 
   <div class="d-flex align-items-center justify-content-between">
-    <a href="index.html" class="logo d-flex align-items-center">
-      <img src="{{ asset('public/assets/img/logo.png') }}" alt="">
-      <span class="d-none d-lg-block">NiceAdmin</span>
+    <a class="logo d-flex align-items-center">
+      <span class="d-none d-lg-block">Admin</span>
     </a>
     <i class="bi bi-list toggle-sidebar-btn"></i>
+    <a href="{{ url('/') }}" style="display: inline-block; width: 50px; height: 45px; text-align: center;">
+    <i class="bi bi-house-fill" style="font-size: 24px; margin-top: 20px;"></i>
+    <div style="font-size: 6px;">Home</div>
+</a>
   </div><!-- End Logo -->
 
   <div class="search-bar">
-    <form class="search-form d-flex align-items-center" method="POST" action="#">
+    <form class="search-form d-flex align-items-center" >
       <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-      <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      <button title="Search"><i class="bi bi-search"></i></button>
     </form>
   </div><!-- End Search Bar -->
 
@@ -102,7 +105,7 @@
 
   <ul class="sidebar-nav" id="sidebar-nav">
     @auth
-    @if(auth()->user()->role == 1)
+    @if(auth()->user()->is_admin == 1)
     <li class="nav-item">
       <a href="{{url('/admin/admin/list')}}" class="nav-link {{ request()->segment(2) === 'admin' ? '' : 'collapsed' }}"> <i class="bi bi-grid"></i>
         <span>User</span>
@@ -118,7 +121,7 @@
     </li><!-- End Components Nav -->
 
     @auth
-    @if(auth()->user()->role == 1)
+    @if(auth()->user()->is_admin == 1)
     <li class="nav-item">
       <a href="{{url('/admin/addservice/list')}}" class="nav-link {{ request()->segment(2) === 'addservice' ? '' : 'collapsed' }}"> <i class="bi bi-grid"></i>
         <span>Add Service</span>
@@ -127,7 +130,7 @@
     @endif
     @endauth
     @auth
-    @if(auth()->user()->role == 1)
+    @if(auth()->user()->is_admin == 1)
     <li class="nav-item">
       <a href="{{url('/admin/addteams/list')}}" class="nav-link {{ request()->segment(2) === 'addteams' ? '' : 'collapsed' }}"> <i class="bi bi-question-circle"></i>
         <span>Add Teams</span>
@@ -136,7 +139,7 @@
     @endif
     @endauth
     @auth
-    @if(auth()->user()->role == 1)
+    @if(auth()->user()->is_admin == 1)
     <li class="nav-item">
       <a href="{{url('/admin/client/list')}}" class="nav-link {{ request()->segment(2) === 'client' ? '' : 'collapsed' }}"> <i class="bi bi-person"></i>
         <span>Clients</span>
@@ -145,7 +148,7 @@
     @endif
     @endauth
     @auth
-    @if(auth()->user()->role == 1)
+    @if(auth()->user()->is_admin == 1)
     <li class="nav-item">
       <a href="{{ route('blogsco-list') }}" class="nav-link {{ request()->is('admin/event/*') ? '' : 'collapsed' }}">
         <i class="bi bi-layout-text-window-reverse" aria-hidden="true"></i><span>Events</span>
@@ -154,7 +157,7 @@
     @endif
     @endauth
     @auth
-    @if(auth()->user()->role == 1)
+    @if(auth()->user()->is_admin == 1)
     <li class="nav-item">
       <a href="{{ route('addcontact-list') }}" class="nav-link {{ request()->is('admin/addcontact/*') ? '' : 'collapsed' }}">
         <i class="bi bi-grid" aria-hidden="true"></i><span>Contact</span>
@@ -163,7 +166,7 @@
     @endif
     @endauth
     @auth
-    @if(auth()->user()->role == 1)
+    @if(auth()->user()->is_admin == 1)
     <li class="nav-item">
       <a href="{{ route('resource-list') }}" class="nav-link {{ request()->is('admin/resource/*') ? '' : 'collapsed' }}">
         <i class="bi bi-journal-text" aria-hidden="true"></i><span>Resource</span>
@@ -188,7 +191,7 @@
     @endauth -->
 
     @auth
-    @if(auth()->user()->role == 1)
+    @if(auth()->user()->is_admin == 1)
     <li class="nav-item">
       <a href="{{ route('blog-logo') }}" class="nav-link {{ request()->is('admin/logo/*') ? '' : 'collapsed' }}">
         <i class="bi bi-bar-chart" aria-hidden="true"></i><span>Logo</span>
@@ -198,7 +201,7 @@
     @endauth
 
     @auth
-    @if(auth()->user()->role == 1)
+    @if(auth()->user()->is_admin == 1)
     <li class="nav-item">
       <a href="{{ route('logo-list') }}" class="nav-link {{ request()->is('admin/design/*') ? '' : 'collapsed' }}">
         <i class="bi bi-grid" aria-hidden="true"></i><span>Design and Logo</span>

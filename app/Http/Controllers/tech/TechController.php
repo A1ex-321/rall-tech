@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Addservice;
 use App\Models\Team;
 use App\Models\Client;
-use App\Models\resource;
+use App\Models\Resource;
 use App\Http\Controllers\Controller;
-use App\Models\blogsco;
+use App\Models\Blogsco;
 use App\Models\raalcontact;
 use App\Models\Design;
 

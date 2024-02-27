@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
-
-
+<!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+<!-- you must put into this  -->
 @section('content')
 <style type="text/css">
     .ck-editor__editable_inline {
@@ -30,6 +30,7 @@
 
     <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
 </head>
 <!-- SweetAlert2 CSS -->
@@ -196,11 +197,16 @@
 
         <!-- Your scripts -->
         <!-- ... (previous code) ... -->
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         <!-- ... (other scripts) ... -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
-        <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script>
+        <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js">
+            
+        </script>
 
         <script>
             document.addEventListener("DOMContentLoaded", function() {

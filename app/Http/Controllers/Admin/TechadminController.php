@@ -11,9 +11,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Addservice;
 use App\Models\Client;
-use App\Models\blogsco;
+use App\Models\Blogsco;
 use App\Models\raalcontact;
-use App\Models\resource;
+use App\Models\Resource;
 use App\Models\Design;
 
 
@@ -215,7 +215,7 @@ class TechadminController extends Controller
     public function bloglist(Request $request)
     {
         // Blogimage::truncate();
-        $data['getRecord'] = blogsco::all();
+        $data['getRecord'] = Blogsco::all();
         return view('admin.sco.blogsco', $data);
     }
     public function create_blogsco(Request $request)

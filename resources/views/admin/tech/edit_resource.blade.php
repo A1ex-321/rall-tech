@@ -51,6 +51,8 @@
     <!-- Include Select2 from CDN -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
 </head>
 <!-- SweetAlert2 CSS -->
 
@@ -316,6 +318,7 @@
 
 <!-- Your scripts -->
 <!-- ... (previous code) ... -->
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
 <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script>
 
