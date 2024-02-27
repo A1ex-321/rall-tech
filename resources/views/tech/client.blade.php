@@ -9,7 +9,9 @@
         /* Smooth transition for the scale effect */
     }
 
-
+    .card:hover {
+        pointer-events: none;
+    }
 
     @media only screen and (max-width: 767px) {
         .filter-nav {
@@ -51,9 +53,9 @@
         display: none;
     } */
     #data2 {
-            display: none;
-        }
- 
+        display: none;
+    }
+
 
     @media only screen and (max-width: 767px) {
 
@@ -112,36 +114,26 @@
     </div>
 
 </div>
-<div class="container" id="data">
-    @php
-    $counter = 0;
-    @endphp
+<div class="container" id="data" style="display: flex; flex-wrap: wrap;">
     @foreach($getRecord as $record)
-        @if($counter % 5 == 0)
-            @if($counter != 0)
-            </div> <!-- Close previous container -->
-            @endif
-            <div class="container" style="display: flex; justify-content: center;">
-        @endif
-        <div class="card" style="padding: 30px; width: 45%; object-fit: contain; aspect-ratio: 1/1; margin-left: 10px;">
-            <img src="{{ asset('public/images/' . $record->image) }}" style="width:100px; margin-left:32px;" alt="">
-        </div>
-        @php
-        $counter++;
-        @endphp
+    <div class="card" style="background-color: white; padding: 30px; width: calc(20% - 20px); object-fit: contain; margin: 0 10px 10px 0;">
+
+        <img src="{{ asset('public/images/' . $record->image) }}" style="width: 100%; height: 100px;" alt="">
+    </div>
     @endforeach
-    </div> <!-- Close the last container -->
 </div>
+
+<!-- Close the last container -->
 
 <div class="container" id="data2">
 
     <div class="row">
         @foreach($getRecord as $record)
         <div class="col-6">
-                <div class="team-img" style="object-fit: cover; aspect-ratio: 2/1;">
-                    <img src="{{ asset('public/images/' . $record->image) }}" alt="{{ $record->name }}" style="height: 150px; width: 100%; object-fit: cover; padding:25px;" class="image-hover">
-                </div>
-            
+            <div class="team-img" style="object-fit: cover; aspect-ratio: 2/1;">
+                <img src="{{ asset('public/images/' . $record->image) }}" alt="{{ $record->name }}" style="height: 150px; width: 100%;  padding:25px;" class="">
+            </div>
+
         </div>
         @endforeach
     </div>
@@ -168,10 +160,10 @@
 
         <div class="row testimonial-slider-two" style="margin: auto;">
             @foreach($getRecord1 as $record)
-            <div class="col-12 testimonial-card alt" style=" margin-left: 40px; ">
-                <div class="service-img">
+            <div class="col-12  alt" style=" margin-left: 40px; ">
+                <div class="-img">
 
-                    <img src="{{ asset('public/images/' . $record->title) }}" alt="" style="height: 100px; ; width:100px;margin-left: 130px; ">
+                    <img src="{{ asset('public/images/' . $record->title) }}" alt="" style="height: 80px; ; width:82px; margin-left:100px; ">
                 </div>
                 <p class="testimonial-text">{{ $record->description }}</p>
             </div>

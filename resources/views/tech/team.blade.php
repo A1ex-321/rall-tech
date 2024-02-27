@@ -53,13 +53,13 @@ margin-left: 90px;        }
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="team-item mb-40">
                         <div class="team-img" style="object-fit: cover; aspect-ratio: 2/1;">
-                            <img src="{{ asset('public/images/' . $record->image) }}" alt="{{ $record->name }}" style="height: 400px; width: 200px; object-fit: cover;">
+                            <img src="{{ asset('public/images/' . $record->image) }}" alt="{{ $record->name }}" style="height: 200px; width: 200px; ">
                         </div>
                         <div class="team-info">
                             <div class=""></div>
-                            <div class="team-member-info d-flex align-items-center">
+                            <div class="team-member-info d-flex align-items-center" style="height:10px;margin-top:89px;">
                                 <div class="">
-                                    <h4 id="tit"style="height:50px;"><a>{{ $record->name }}</a></h4>
+                                    <h4 id="tit"style="height:10px; font-size:16px;"><a>{{ $record->name }}</a></h4>
                                 </div>
                             </div>
                         </div>

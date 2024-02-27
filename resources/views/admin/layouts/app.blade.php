@@ -4,6 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Content Security Policy meta tag -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
     <title>Ecommerce | {{ !empty($header_title) ? $header_title : '' }}</title>
 
     <!-- Google Font: Source Sans Pro -->
@@ -117,6 +120,7 @@
 
   <!-- Template Main JS File -->
   <script src="{{ url('public/assets/js/main.js') }}"></script>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </body>
 
 </html>

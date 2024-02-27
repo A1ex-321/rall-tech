@@ -1,6 +1,8 @@
 @include('tech.layout.header')
 
-
+<style>.card:hover {
+        pointer-events: none;
+    }</style>
 <!--====== Start Banner section ======-->
 <section class="banner-area-v1">
     <div class="hero-slider-one">
@@ -125,8 +127,8 @@
             @foreach($service as $item)
             <div class="col-lg-4">
                 <div class="service-item text-center mb-55" style="height: 350px;">
-                    <div class="service-img">
-                        <img src="{{ asset('public/images/' . $item->image) }}" alt="" style="height: 100px; width: 100px; margin-left: 100px;">
+                    <div class="-img">
+                        <img src="{{ asset('public/images/' . $item->image) }}" alt="" style="height: 100px; width: 110px; margin-left: 100px;">
                     </div>
                     <div class="service-content">
                         <span class="position" style="font-size: 25px; font-weight: bold;">{{ $item->title }}</span>
@@ -176,9 +178,9 @@
                         </div>
                         <div class="team-info">
                             <div class=""></div>
-                            <div class="team-member-info d-flex align-items-center">
+                            <div class="team-member-info d-flex align-items-center" style="height:10px;">
                                 <div class="">
-                                    <h4><a>{{ $member->name }}</a></h4>
+                                    <h4 style="height:10px; font-size:16px;"><a>{{ $member->name }}</a></h4>
                                 </div>
                             </div>
                         </div>
@@ -269,7 +271,7 @@
                 <div class="col-6">
                     <div class="team-item mb-40">
                         <div class="team-img" style="object-fit: contain; aspect-ratio: 1/1;">
-                            <img src="{{ asset('public/images/' . $teamMember->image) }}" alt="{{ $teamMember->name }}" style="height: 200px; width: 200px; object-fit:cover;">
+                            <img src="{{ asset('public/images/' . $teamMember->image) }}" alt="{{ $teamMember->name }}" style="height: 170px; width: 100%; ">
                         </div>
                         <div class="">
                             <div class=""></div>
@@ -282,7 +284,7 @@
                         </ul>
                     </div> -->
                                 <div class="">
-                                    <h4><a>{{ $teamMember->name }}</a></h4>
+                                    <h4><a style="font-size:16px;">{{ $teamMember->name }}</a></h4>
                                 </div>
                             </div>
                         </div>
@@ -319,7 +321,7 @@
                     <div class="row">
                         @foreach ($image as $client)
                         <div class="col-6">
-                            <div class="logo-box">
+                            <div class="-box">
                                 <img src="{{ asset('public/images/' . $client->image) }}" style="width:100%; height:162px;" alt="">
                             </div>
                         </div>
@@ -355,10 +357,10 @@
         <div class="row testimonial-slider-two" style="margin: auto;">
 
             @foreach ($test as $testimonial)
-            <div class="col-12 testimonial-card alt" style="height: 400px;margin-left: 40px;">
-                <div class="service-img">
+            <div class="col-12 alt" style="height: 400px;margin-left: 40px;">
+                <div class="-img">
 
-                    <img src="{{ asset('public/images/' . $testimonial->title) }}" alt="" style="height: 100px; ; width:100px;margin-left: 100px; ">
+                    <img src="{{ asset('public/images/' . $testimonial->title) }}" alt="" style="height: 70px;  width:90px;margin-left: 100px; ">
                 </div>
                 <p class="testimonial-text">"{{ $testimonial->description }}"</p>
             </div>

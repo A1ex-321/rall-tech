@@ -1,31 +1,47 @@
 @include('tech.layout.header')
-<style>#all a {
-    color: blue; /* Sets the text color to blue */
-    text-decoration: underline; /* Adds underline */
-}</style>
+<style>
+    .img-fluid {
+        transition: transform 0.3s ease-in-out;
+        /* Add smooth transition */
+    }
 
-<section class="project-area-v3 pt-115 pb-120" id="project-filter">
-        <div class="container-fluid" style="margin-top: 10px;">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="filter-nav text-center mb-70">
-                        <ul class="filter-btn">
-                            <li data-filter="*" class="active"> Innovate. </li>
-                            <li data-filter=".cat-1"> Connect. </li>
-                            <li data-filter=".cat-2"> Transform.</li>
-                            <li data-filter=".cat-3"> Welcome to</li>
-                            <li data-filter=".cat-4">Raal Tech Solution 2023! </li>
-                           
-                        </ul>
-                    </div>
+    .img-fluid:hover {
+        transform: scale(1.2);
+        /* Increase the size on hover */
+    }
+</style>
+<style>
+    #all a {
+        color: blue;
+        /* Sets the text color to blue */
+        text-decoration: underline;
+        /* Adds underline */
+    }
+</style>
+<!--====== Start breadcrumbs section ======-->
+<section class="breadcrumbs-section bg_cover" style="background-image: url('{{ asset('public/tech/assets/images/event.jpg') }}');">
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="breadcrumbs-content">
+                    <h1>Our Events</h1>
+                    <ul class="link">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">Our Events</li>
+                    </ul>
                 </div>
             </div>
-          
-
-<div class="container" id="data">
-   
-        <div class="row">
-        @if($getRecord)
+        </div>
+    </div>
+</section><!--====== End breadcrumbs section ======-->
+<!--====== Start Blog-standard-section ======-->
+<section class="blog-standard-section pt-120 pb-80">
+    <div class="container">
+        <div class="row" id="data">
+            <div class="col-lg-8">
+                @if($getRecord)
                 <div class="blog-post-item mb-50">
                     <div class="post-thumbnail">
                         <img src="{{ asset('public/images/' . $getRecord->image) }}" style="width:100%;height:350px;object-fit:cover;" alt="">
@@ -40,64 +56,95 @@
                         <p>{{ $getRecord->description }}</p>
                     </div>
                     <div class="ckeditor-content" id="all">
-                        {!! str_replace('<img', '<img style="width: 600px; height: 300px;"' , $getRecord->content) !!}
+                        {!! str_replace('<img', '<img style="width: 100%;max-height: 600px;"' , $getRecord->content) !!}
                     </div>
 
                 </div>
                 @else
                 <p>No record found for the given ID.</p>
                 @endif
+
+
+
+            </div>
+
+            <div class="col-lg-4">
+                <div class="sidebar-widget-area">
+                    <div class="widget widget-recent-post mb-40">
+                        <h4 class="widget-title">Recent Post</h4>
+                        <ul class="recent-post-widget">
+                            @foreach($getRecordone as $record1)
+                            <li class="post-thumbnail-content">
+                                <img style="object-fit:cover;"src="{{ asset('public/images/' . $record1->image) }}" href="{{ url('/singleevent', $record1->id) }}"class="img-fluid" alt="">
+                                <div class="post-title-date">
+                                <h6 style="overflow: hidden; height:60px; text-overflow: ellipsis;">
+    <a href="{{ url('/singleevent', $record1->id) }}">{{ $record1->title }}</a>
+</h6>
+
+                                    <span class="posted-on" style="font-size: small;">
+    <i class="fas fa-calendar-alt"></i>
+    {{ \Carbon\Carbon::parse($record1->created_at)->format('F j, Y') }}
+</span>
+
+                                </div>
+                            </li>
+                            @endforeach
+
+
+                        </ul>
+                    </div>
+                    <div class="widget widget-tag-cloud mb-40">
+                        <h4 class="widget-title">Popular Tags</h4>
+                        <a href="{{ url('/team') }}">Our Team</a>
+                        <a href="{{ url('/event') }}">Events & Achievements</a>
+
+                    </div>
+                    <div class="widget widget-cta mb-40">
+                        <div class="cta-content bg_cover text-center" style="">
+
+                            <h3>Make a call for
+                                any type query.</h3>
+                            <i class="icofont-ui-call"></i>
+                            <h4 class="call"><a href="tel:+91 70940 770 40">+91 70940 770 4.</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    
-</div>
-
-
-        </div>
-    </section><!--====== End project-page-section ======-->
-
-        <!--====== Start breadcrumbs-section ======-->
-        <!-- <div class="container" id="data" class="ckeditor-content">
-    {!! str_replace('<img', '<img style="width: 600px; height: 300px;"', $getRecord->content) !!} -->
-   
-
-
-
-
-</div>
+    </div>
+</section><!--====== End Blog-standard-section ======-->
+<!--====== Start Footer ======-->
 <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const blogListContainer = document.getElementById('all');
+    document.addEventListener('DOMContentLoaded', function() {
+        const blogListContainer = document.getElementById('data');
 
-const oembedContainers = blogListContainer.querySelectorAll('oembed');
-console.log("fddf",oembedContainers);
-oembedContainers.forEach(oembed => {
-    const outerHtml = oembed.outerHTML;
-    const urlMatch = outerHtml.match(/url="(.*?)"/);
+        const oembedContainers = blogListContainer.querySelectorAll('oembed');
+        console.log("fddf", oembedContainers);
+        oembedContainers.forEach(oembed => {
+            const outerHtml = oembed.outerHTML;
+            const urlMatch = outerHtml.match(/url="(.*?)"/);
 
-    if (urlMatch) {
-        const url = urlMatch[1];
+            if (urlMatch) {
+                const url = urlMatch[1];
 
-        const iframe = document.createElement('iframe');
-        iframe.setAttribute('src', url);
-        iframe.setAttribute('width', '600'); // Set your desired width
-        iframe.setAttribute('height', '400'); // Set your desired height
-        iframe.setAttribute('frameborder', '0');
-        iframe.setAttribute('allowfullscreen', 'true');
+                const iframe = document.createElement('iframe');
+                iframe.setAttribute('src', url);
+                iframe.setAttribute('width', '600'); // Set your desired width
+                iframe.setAttribute('height', '400'); // Set your desired height
+                iframe.setAttribute('frameborder', '0');
+                iframe.setAttribute('allowfullscreen', 'true');
 
-        oembed.replaceWith(iframe);
-    }
-});
+                oembed.replaceWith(iframe);
+            }
+        });
 
-const anchorInContainer = blogListContainer.querySelectorAll('a');
-                        anchorInContainer.forEach(link => {
-                            link.addEventListener('click', function (event) {
-                                event.preventDefault(); // Prevents the default behavior (opening the link)
-                                window.open(link.href, '_blank');
-                            });
-                        });                
+        const anchorInContainer = blogListContainer.querySelectorAll('a');
+        anchorInContainer.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevents the default behavior (opening the link)
+                window.open(link.href, '_blank');
+            });
+        });
     });
-
-
-
 </script>
 @include('tech.layout.footer')

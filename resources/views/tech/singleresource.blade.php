@@ -56,7 +56,7 @@
                         <p>{{ $getRecordone->description }}</p>
                     </div>
                     <div class="ckeditor-content" id="all">
-                        {!! str_replace('<img', '<img style="width: 600px; height: 300px;"' , $getRecordone->content) !!}
+                        {!! str_replace('<img', '<img style="width: 100%;max-height: 600px;"' , $getRecordone->content) !!}
                     </div>
 
                 </div>
@@ -75,7 +75,7 @@
                         <ul class="recent-post-widget">
                             @foreach($getRecord as $record1)
                             <li class="post-thumbnail-content">
-                                <img src="{{ asset('public/images/' . $record1->image) }}" href="{{ url('/singleresource', $record1->id) }}"class="img-fluid" alt="">
+                                <img style="object-fit:cover;"src="{{ asset('public/images/' . $record1->image) }}" href="{{ url('/singleresource', $record1->id) }}"class="img-fluid" alt="">
                                 <div class="post-title-date">
                                 <h6 style="overflow: hidden; height:60px; text-overflow: ellipsis;">
     <a href="{{ url('/singleresource', $record1->id) }}">{{ $record1->title }}</a>
@@ -100,7 +100,7 @@
 
                     </div>
                     <div class="widget widget-cta mb-40">
-                        <div class="cta-content bg_cover text-center" style="background-image: url({{ asset('public/tech/assets/images/blog/cta-bg.jpg') }});">
+                        <div class="cta-content bg_cover text-center" style="">
 
                             <h3>Make a call for
                                 any type query.</h3>

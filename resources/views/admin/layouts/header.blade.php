@@ -10,7 +10,7 @@
       <span class="d-none d-lg-block">Admin</span>
     </a>
     <i class="bi bi-list toggle-sidebar-btn"></i>
-    <a href="{{ url('/') }}" style="display: inline-block; width: 50px; height: 45px; text-align: center;">
+    <a href="{{ url('/') }}" style="display: inline-block; width: 50px; height: 45px; text-align: center;" target="_blank">
     <i class="bi bi-house-fill" style="font-size: 24px; margin-top: 20px;"></i>
     <div style="font-size: 6px;">Home</div>
 </a>
@@ -18,8 +18,8 @@
 
   <div class="search-bar">
     <form class="search-form d-flex align-items-center" >
-      <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-      <button title="Search"><i class="bi bi-search"></i></button>
+  
+      <button title="Search"><i class=""></i></button>
     </form>
   </div><!-- End Search Bar -->
 
@@ -35,8 +35,8 @@
       <li style="margin-left:300px;" class="nav-item dropdown">
 
         <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-          <i class="bi bi-bell"></i>
-          <span class="badge bg-primary badge-number">0</span>
+          <i class=""></i>
+          <span class="badge bg-primary badge-number"></span>
         </a><!-- End Notification Icon -->
 
         <!-- End Notification Dropdown Items -->
@@ -46,8 +46,8 @@
       <li class="nav-item dropdown">
 
         <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-          <i class="bi bi-chat-left-text"></i>
-          <span class="badge bg-success badge-number">0</span>
+          <i class=""></i>
+          <span class="badge bg-success badge-number"></span>
         </a><!-- End Messages Icon -->
 
         <!-- End Messages Dropdown Items -->

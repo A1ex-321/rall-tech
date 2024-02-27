@@ -70,6 +70,8 @@ class TechController extends Controller
     public function singleevent(Request $request,$id){
         $data['getRecord'] = blogsco::find($id);
         //  dd($data['getRecord']);
+        $data['getRecordone'] = blogsco::where('id', '!=', $id)->get(); // Fetch all resources except the one with the given ID
+
         return view('tech.singleevent',$data);
     }
     public function singleresource(Request $request, $id) {

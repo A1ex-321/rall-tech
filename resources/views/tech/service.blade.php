@@ -34,8 +34,8 @@
             @foreach($getRecord as $record)
             <div class="col-md-4">
                 <div class="service-item text-center mb-55" style="height: 350px;">
-                    <div class="service-img">
-                        <img src="{{ asset('public/images/' . $record->image) }}" alt="" style="height: 100px; width: 100px; margin-left: 100px; object-fit: cover;">
+                    <div class="-img">
+                        <img src="{{ asset('public/images/' . $record->image) }}" alt="" style="height: 100px; width: 100px; margin-left: 100px; ">
                     </div>
                     <div class="service-content">
                         <span class="position" style="font-size: 25px; font-weight: bold;">{{ $record->title }}</span>

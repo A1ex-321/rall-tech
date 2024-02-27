@@ -135,7 +135,7 @@
 
                     <div class="col-lg-12 col-md-6 col-sm-12">
                         <div class="team-item text-center mb-55">
-                        <img src="{{ asset('public/images/' . $image->image) }}" alt="" style="height: 150px; width: 50%; margin: auto; display: block;">
+                        <img src="{{ asset('public/images/' . $image->image) }}" alt="" style="height: 150px; width: 50%; margin: auto; display: block; ">
 
 
 
