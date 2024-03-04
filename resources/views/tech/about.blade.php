@@ -1,4 +1,20 @@
 @include('tech.layout.header')
+<style>
+    .custom-container .team-slide-one {
+        max-width: 60%; /* Adjust this value to set your desired slider width */
+        margin: 0 auto; /* This centers the slider in the container */
+        display: block;
+    }
+
+    /* Optional: Adjust the image styling if necessary */
+    .custom-container .team-slide-one div img {
+        max-width: 100%; /* Ensures images are responsive within the slider */
+        height: auto; /* Maintains aspect ratio */
+        display: block; /* Centers images in their div if not already centered */
+        margin: 0 auto; /* Centers images horizontally */
+    }
+</style>
+
     <!--====== Start breadcrumbs section ======-->
     <section class="breadcrumbs-section bg_cover" style="background-image: url({{ asset('public/tech/assets/images/ab2.png') }});">
 
@@ -20,7 +36,7 @@
     <section class="features-area-v4 pt-130 pb-80">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <div class="features-box mb-40">
                         <div class="features-content">
 
@@ -48,13 +64,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="">
                     <div class="features-box mb-40 features-video bg_cover"
-                        style="background-image: url(assets/images/c5.jpg);">
+                        style="">
 
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <div class="features-box mb-40">
                         <div class="features-content">
                             <h4>Introduction to RAALTECH Solutions</h4>
@@ -129,25 +145,16 @@
             </div>
         </div>
         <div class="custom-container">
-            <div class="">
-                <div class="row team-slide-one" style="margin-top: -50px;">
+        <div class="">
+            <div class="row team-slide-one" style="margin-top: -50px;">
                 @foreach($logo as $image)
-
-                    <div class="col-lg-12 col-md-6 col-sm-12">
-                        <div class="team-item text-center mb-55">
-                        <img src="{{ asset('public/images/' . $image->image) }}" alt="" style="height: 150px; width: 50%; margin: auto; display: block; ">
-
-
-
-                        </div>
-                    </div>
-                    @endforeach
-
-                    
+                <div>
+                    <img src="{{ asset('public/images/' . $image->image) }}" alt="" style="height: 150px; width:80%; margin: auto;">
                 </div>
-
+                @endforeach
             </div>
         </div>
+    </div>
     </section>
     <!--====== Start Testimonial section ======-->
     <section class="testimonial-area-v2 pt-105 pb-120">

@@ -49,14 +49,14 @@
                     <div class="entry-content">
                         <div class="post-meta d-flex justify-content-between">
                             <ul class="meta-link">
-                                <li><span><i class="icofont-user-alt-7"></i><a>{{ \Carbon\Carbon::parse($getRecord->created_at)->format('F j, Y') }}</a></span></li>
+                                <li><span><i class="icofont-user-alt-7"></i>{{ \Carbon\Carbon::parse($getRecord->created_at)->format('F j, Y') }}</span></li>
                             </ul>
                         </div>
-                        <h3 class="title"><a>{{ $getRecord->title }}</a></h3>
+                        <h3 class="meta-link">{{ $getRecord->title }}</h3>
                         <p>{{ $getRecord->description }}</p>
                     </div>
                     <div class="ckeditor-content" id="all">
-                        {!! str_replace('<img', '<img style="width: 100%;max-height: 600px;"' , $getRecord->content) !!}
+                        {!! str_replace('<img', '<img style="width: 100%;max-height: 500px;height:auto;"' , $getRecord->content) !!}
                     </div>
 
                 </div>

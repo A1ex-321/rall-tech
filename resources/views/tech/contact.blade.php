@@ -98,24 +98,24 @@
 
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <div class="form_group">
+                                    <div class="form_group" style="border:2px solid #f9580e;">
                                         <input type="text" class="form_control" placeholder="Name:" name="name" required>
                                     </div>
                                 </div>
 
 
-                                <div class="col-lg-6">
-                                    <div class="form_group">
+                                <div class="col-lg-6"style="margin-top:2px;">
+                                    <div class="form_group" style="border:2px solid #f9580e;">
                                         <input type="text" class="form_control" placeholder="Phone:" name="phone">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
-                                    <div class="form_group">
+                                    <div class="form_group" style="margin-top:10px;border:2px solid #f9580e;">
                                         <textarea class="form_control" name="msg" placeholder="Message here...."></textarea>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
-                                    <div class="form_group">
+                                    <div class="form_group" style="margin-top:10px;">
                                         <button class="main-btn">Send Message</button>
                                     </div>
                                 </div>

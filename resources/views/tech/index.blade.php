@@ -420,29 +420,29 @@
         </div>
     </section><!--====== End Blog section ======-->
 </div>
+
 <!--====== Start Project-area section ======-->
 <div class="resource">
-    <section class="project-area-v1" style="margin-top: 150px;">
+    <section class="project-area-v1" style="margin-top: -150px;">
         <div class="project-main-section">
-            <div class="project-bg bg_cover" style="width:100%;background-image: url({{ asset('public/tech/assets/images/b1.jpg') }}); height: 400px;">
-            </div>
+            
 
             <div class="container">
+            <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="section-title section-white-title mb-100">
-                        <h2>Our Resources
+                    <div class="section-title text-center ">
+                        <div class="sub-title">
+                            <span class="title">Resources</span>
 
-                            <span>
-                            </span>
-                        </h2>
-                    </div>
-                    <div class="play-content">
-                        <a class="video-popup"><i class="flaticon-play-button"></i></a>
+                        </div>
+                        <h2>Learn More From Our
+                            Latest <span>Resource.</span></h2>
                     </div>
                 </div>
             </div>
+            </div>
         </div>
-        <div class="project-slide-wrapper">
+        <div class="" style="background-color:thistle;">
             <div class="container">
                 <div class="row project-slide-one">
                     @foreach ($resource as $resource)
@@ -450,7 +450,7 @@
                         <div class="project-item">
                             <div class="project-img" >
                             <a href="{{ url('/singleresource', $resource->id) }}">
-    <img src="{{ asset('public/images/' . $resource->image) }}" alt="" style="height: 120px; width: 200px; border-radius:10px;object-fit:cover;">
+    <img src="{{ asset('public/images/' . $resource->image) }}" alt="" style="height: 186px; width: 286px; border-radius:10px;object-fit:cover;">
 </a>
 
                                 <div class="">
