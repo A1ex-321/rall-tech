@@ -2,7 +2,15 @@
 
 <style>.card:hover {
         pointer-events: none;
-    }</style>
+    }
+        .icofont-arrow-left {
+    display: none;
+}
+.icofont-arrow-right
+{
+    display: none;
+
+}</style>
 <!--====== Start Banner section ======-->
 <section class="banner-area-v1">
     <div class="hero-slider-one">
@@ -11,13 +19,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="hero-content" style="text-align: center; ">
-                            <h2 style="color: aliceblue;"><span>Welcome to</span>
-                                RAAL TECH SOLUTIONS
+                        <div class="hero-content" style="text-align: center;">
+                            <h2 style="color: aliceblue; white-space: nowrap;">
+                                <span>Welcome to</span> RAAL TECH SOLUTIONS
                             </h2>
-
                             <a href="{{ url('/contact') }}" class="main-btn">GET STARTED</a>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -65,7 +73,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="about-img-box">
-                    <img src="{{ asset('public/tech/assets/images/c5.jpg') }}" alt="" style="margin-bottom: -100px;">
+                    <img src="{{ asset('public/tech/assets/images/2121.png') }}" alt="" style="margin-bottom: -100px;margin-left:200px;margin-top:100px;">
 
                 </div>
             </div>
@@ -78,22 +86,25 @@
                                         <i class="flaticon-digger"></i>
                                     </div> -->
                         </div>
-                        <h2>Welcome <span> to</span> RAALTECH <span class="thin"> Solutions.</span></h2>
+                        <h2>Introduction <span> to</span> RAALTECH <span class="thin"> Solutions.</span></h2>
                     </div>
-                    <h5>“
+                    <p>“
+
+                     Raaltech Solutions, founded in 2021, is your dedicated partner in the dynamic world
+                                of
+                                Intellectual P
+                                roperty. Our journey began with a commitment to provide comprehensive
+                                solutions to protect and leverage your innovations.</p>
+                        <div class="section-title mb-35">
+                            
+                             <h2>Welcome <span> to</span> RAALTECH <span class="thin"> Solutions.</span></h2>
+                                <p>“
 
                         We are your trusted partner in the realm of Intellectual
                         Property Rights (IPR) services. With a global footprint and a commitment to excellence, we
                         are
                         dedicated to safeguarding and enhancing the value of your intellectual assets in India and
                         abroad .</p>
-                        <div class="section-title mb-35">
-                            <h2>Introduction <span> to</span> RAALTECH <span class="thin"> Solutions.</span></h2>
-                            <p>Raaltech Solutions, founded in 2021, is your dedicated partner in the dynamic world
-                                of
-                                Intellectual P
-                                roperty. Our journey began with a commitment to provide comprehensive
-                                solutions to protect and leverage your innovations.</p>
                         </div>
                         <a href="{{ url('/about') }}" class="main-btn">View More</a>
                 </div>
@@ -174,7 +185,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="team-item mb-40">
                         <div class="team-img" style="object-fit: cover; aspect-ratio: 1/1;">
-                            <img src="{{ asset('public/images/' . $member->image) }}" alt="{{ $member->name }}" style="height: 200px; width: 200px;">
+                            <img src="{{ asset('public/images/' . $member->image) }}" alt="{{ $member->name }}" style="height: 200px; width: 200px; object-fit:cover;">
                         </div>
                         <div class="team-info">
                             <div class=""></div>
@@ -270,8 +281,8 @@
                 @foreach ($team as $teamMember)
                 <div class="col-6">
                     <div class="team-item mb-40">
-                        <div class="team-img" style="object-fit: contain; aspect-ratio: 1/1;">
-                            <img src="{{ asset('public/images/' . $teamMember->image) }}" alt="{{ $teamMember->name }}" style="height: 170px; width: 100%; ">
+                        <div class="team-img" style=" aspect-ratio: 1/1;">
+                            <img src="{{ asset('public/images/' . $teamMember->image) }}" alt="{{ $teamMember->name }}" style="height: 170px; width: 100%; object-fit:cover;">
                         </div>
                         <div class="">
                             <div class=""></div>
@@ -423,7 +434,7 @@
 
 <!--====== Start Project-area section ======-->
 <div class="resource">
-    <section class="project-area-v1" style="margin-top: -150px;">
+    <section class="project-area-v1" style="margin-top: -150px; padding-top:20px;">
         <div class="project-main-section">
             
 
@@ -442,7 +453,7 @@
             </div>
             </div>
         </div>
-        <div class="" style="background-color:thistle;">
+        <div class="" style="background-color:#abadb0; padding-top:20px;">
             <div class="container">
                 <div class="row project-slide-one">
                     @foreach ($resource as $resource)
@@ -514,7 +525,7 @@
             <div class="row">
                 <div class="counter-column col-lg-4 col-md-6 col-sm-12">
                     <div class="counter-box">
-                        <h2><span class="counter">50</span> <span class="plus">+</span></h2>
+                        <h2><span class="counter">350</span> <span class="plus">+</span></h2>
                         <h4>Total Project</h4>
                     </div>
                 </div>

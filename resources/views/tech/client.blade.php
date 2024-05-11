@@ -101,18 +101,27 @@
     <div class="row justify-content-center">
         <div class="col-lg-10">
             <div class="filter-nav text-center mb-70">
-                <ul class="filter-btn">
-                    <li data-filter="*" class="active"> A testimonial page on a</li>
-                    <li data-filter=".cat-1">website serves as a valuable</li>
-                    <li data-filter=".cat-2">tool for building credibility</li>
-                    <li data-filter=".cat-3"> and</li>
-                    <li data-filter=".cat-4">trust with visitors.</li>
+                <!--<ul class="filter-btn">-->
+                <!--    <li data-filter="*" class="active"> A testimonial page on a</li>-->
+                <!--    <li data-filter=".cat-1">website serves as a valuable</li>-->
+                <!--    <li data-filter=".cat-2">tool for building credibility</li>-->
+                <!--    <li data-filter=".cat-3"> and</li>-->
+                <!--    <li data-filter=".cat-4">trust with visitors.</li>-->
 
-                </ul>
+                <!--</ul>-->
             </div>
         </div>
     </div>
 
+</div>
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+        <div class="filter-nav text-center mt-30 mb-10">
+            <ul class="filter-btn">
+                <li data-filter="*" class="active">Some of our client</li>
+            </ul>
+        </div>
+    </div>
 </div>
 <div class="container" id="data" style="display: flex; flex-wrap: wrap;">
     @foreach($getRecord as $record)
@@ -147,9 +156,7 @@
     <div class="col-lg-10">
         <div class="filter-nav text-center mt-30 mb-10">
             <ul class="filter-btn">
-                <li data-filter="*" class="active">Our Testimonials</li>
-
-
+                <li data-filter="*" class="active">Some of our client</li>
             </ul>
         </div>
     </div>

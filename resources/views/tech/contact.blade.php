@@ -2,43 +2,12 @@
 @include('tech.layout.message')
 
 <!--====== Start breadcrumbs section ======-->
-<section class="breadcrumbs-section bg_cover" style="background-image: url('{{ asset('public/tech/assets/images/contact3.png') }}');">
-
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="breadcrumbs-content">
-                    <h1>Contact Us</h1>
-                    <ul class="link">
-                        <li><a>Home</a></li>
-                        <li class="active">Contact</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section><!--====== End breadcrumbs section ======-->
+<!--====== End breadcrumbs section ======-->
 <section class="service-area-v1 bg_cover pt-135 pb-120">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <div class="section-title section-white-title text-center mb-100">
-                    <div class="sub-title">
-                        <span class="title">Contact us</span>
-                        <!-- <div class="icon">
-                                        <i class="flaticon-digger"></i>
-                                    </div> -->
-                    </div>
-                    <h5 style="color: #ebe7e7;">We invite authors from various domains to publish their content. We
-                        offer our
-                        service to produce it as books, monographs, technical reports, technical letters and etc.,
-                        with ISBN number.
-                        Our dedicated team works closely with each author to provide the support and guidance they
-                        need throughout
-                        the publishing process.</span>
-                    </h5>
-
-                </div>
+               
             </div>
         </div>
         <div class="row ">
@@ -98,20 +67,20 @@
 
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <div class="form_group" style="border:2px solid #f9580e;">
-                                        <input type="text" class="form_control" placeholder="Name:" name="name" required>
+                                    <div class="form_group" >
+                                        <input type="text" style="border:2px solid #f9580e;"class="form_control" placeholder="Name:" name="name" required>
                                     </div>
                                 </div>
 
 
-                                <div class="col-lg-6"style="margin-top:2px;">
-                                    <div class="form_group" style="border:2px solid #f9580e;">
-                                        <input type="text" class="form_control" placeholder="Phone:" name="phone">
+                                <div class="col-lg-6">
+                                    <div class="form_group" >
+                                        <input type="text"style="border:2px solid #f9580e;" style="margin-top:2px;" class="form_control" placeholder="Phone:" name="phone">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
-                                    <div class="form_group" style="margin-top:10px;border:2px solid #f9580e;">
-                                        <textarea class="form_control" name="msg" placeholder="Message here...."></textarea>
+                                    <div class="form_group" >
+                                        <textarea class="form_control" style="margin-top:10px;border:2px solid #f9580e;"name="msg" placeholder="Message here...."></textarea>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">

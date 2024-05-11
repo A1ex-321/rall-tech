@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-
+ <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 @section('content')
 
 
@@ -47,7 +47,14 @@
                                     <label for="recipient-name" class="col-form-label">Name</label>
                                     <input type="text" class="form-control" id="recipient-name" name="name" required>
                                 </div>
-
+ <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Designation</label>
+                                    <input type="text" class="form-control" id="recipient-name" name="design" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">New</label>
+                                    <input type="text" class="form-control" id="recipient-name" name="new" >
+                                </div>
                                 <div class="form-group">
                                     <label for="message-text" class="col-form-label">Photo:</label>
                                     <input type="file" class="form-control" id="recipient-name" name="image" required>
@@ -77,6 +84,8 @@
                                                 <tr>
                                                     <th>#</th>
                                                     <th>Name</th>
+                                                        <th>Designation</th>
+                                                    <th>New</th> 
                                                     <th>Photo</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -86,6 +95,8 @@
                                                 <tr>
                                                     <td>{{$value->id}}</td>
                                                     <td>{{$value->name}}</td>
+                                                      <td>{{$value->design}}</td>
+                                                    <td>{{$value->new}}</td>
                                                     <td><img src="{{ asset('public/images/' . $value->image) }}" style="width:100px;height:60px;" alt="Image"></td>
                                                     <td>
                                                         <a href="#" class="btn btn-info edit-btn" data-id="{{ $value->id }}" data-toggle="modal" data-target="#editModal"><i class="fas fa-edit"></i></a>
@@ -112,7 +123,14 @@
                                                                 <label for="editTitle">Name</label>
                                                                 <input type="text" class="form-control" id="editTitle" name="name">
                                                             </div>
-
+<div class="form-group">
+                                                                <label for="editTitle">Designation</label>
+                                                                <input type="text" class="form-control" id="editTitle1" name="design">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="editTitle">New</label>
+                                                                <input type="text" class="form-control" id="editTitle2" name="new">
+                                                            </div>
                                                             <div class="form-group">
                                                                 <label for="editImage" class="col-form-label">Photo:</label>
                                                                 <input type="file" class="form-control" id="editImage" name="image">
@@ -264,6 +282,8 @@
                 url: "{{ url('admin/addteams/edit') }}" + '/' + id,
                 success: function(response) {
                     $('#editTitle').val(response.name);
+                     $('#editTitle1').val(response.design);
+                    $('#editTitle2').val(response.new);
                     $('#editImagePreview').attr('src', "{{ asset('public/images') }}" + '/' + response.image);
                     // Update other input fields as needed
                 }

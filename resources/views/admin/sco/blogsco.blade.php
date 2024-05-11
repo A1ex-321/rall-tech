@@ -1,5 +1,5 @@
 @extends('admin.layouts.app')
-<!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+ <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
 <!-- you must put into this  -->
 @section('content')
 <style type="text/css">

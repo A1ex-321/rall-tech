@@ -416,12 +416,34 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
                         <div class="top-right">
-                            <ul class="social-link">
-                                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a></li>
-                                <li><a href="https://api.whatsapp.com/send?phone=123456789"><i class="fab fa-whatsapp"></i></a></li>
-                                <li><a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a></li>
-                                <li><a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a></li>
-                                <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+                           <ul class="social-link">
+                            <li>
+    <a href="https://www.facebook.com/profile.php?id=61556684204972 ">
+        <i class="fab fa-facebook" style="background-color: #3b5998; color: white; padding: 5px; border-radius: 50%;"></i>
+    </a>
+</li>
+
+<li>
+    <a href="whatsapp://send?phone=7845158684">
+        <i class="fab fa-whatsapp" style="background-color: #25D366; color: white; padding: 5px; border-radius: 50%;"></i>
+    </a>
+</li>
+<li>
+    <a href="https://www.youtube.com/channel/UCgiTSl_wU6rCivYx0FdU3sg">
+        <i class="fab fa-youtube" style="background-color: #FF0000; color: white; padding: 5px; border-radius: 50%;"></i>
+    </a>
+</li>
+<li>
+    <a href="https://www.linkedin.com/in/raaltech-solutions-6046312b1/ ">
+        <i class="fab fa-linkedin" style="background-color: #0077B5; color: white; padding: 5px; border-radius: 50%;"></i>
+    </a>
+</li>
+<li>
+    <a href="https://www.instagram.com/raaltech_solutions/ ">
+        <i class="fab fa-instagram" style="background-color: #E4405F; color: white; padding: 5px; border-radius: 50%;"></i>
+    </a>
+</li>
+
                             </ul>
                         </div>
                     </div>
@@ -431,7 +453,7 @@
         </div>
         <div class="header-navigation">
             <div class="nav-container">
-                <div class="container">
+                <div class="container" style="max-width:1300px;">
                     <div class="row align-items-center">
                         <div class="col-lg-3 logo-col col-6">
                             <div class="site-branding">
@@ -452,19 +474,19 @@
                                 </div>
                                 <nav class="main-menu">
                                     <ul>
-                                        <li class="menu-item "><a href="{{ url('/') }}">Home</a>
+                                        <li class="menu-item "><a href="{{ url('/') }}"style="font-size: 18px;">Home</a>
 
                                         </li>
-                                        <li class="menu-item "><a href="{{ url('/about') }}">About</a>
+                                        <li class="menu-item "><a href="{{ url('/about') }}"style="font-size: 18px;">About</a>
 
                                         </li>
 
-                                        <li class=""><a href="{{ url('/service') }}">Services</a>
+                                        <li class=""><a href="{{ url('/service') }}"style="font-size: 18px;">Services</a>
 
 
-                                        <li><a href="{{ url('/team') }}">Team</a></li>
-                                        <li class="menu-item "><a href="{{ url('/client') }}">Clients</a>
-                                        <li><a href="{{ url('/event') }}">Events & Achivements</a></li>
+                                        <li><a href="{{ url('/team') }}"style="font-size: 18px;">Team</a></li>
+                                        <li class="menu-item "><a href="{{ url('/client') }}"style="font-size: 18px;">Clients</a>
+                                        <li><a href="{{ url('/event') }}"style="font-size: 18px;">Events & Achivements</a></li>
 
                                         <!-- <ul class="sub-menu">
                                                 <li><a href="patent.html">Patent law</a></li>
@@ -480,14 +502,14 @@
                                         <!-- <li class="menu-item "><a href="career.html">Careers</a> -->
 
                                         </li>
-                                        <li class="menu-item  "><a href="{{ url('/resource') }}">Resources</a>
+                                        <li class="menu-item  "><a href="{{ url('/resource') }}"style="font-size: 18px;">Resources</a>
 
                                         </li>
 
 
 
                                         </li>
-                                        <li class="menu-item"><a href="{{ url('/contact') }}">Contact</a></li>
+                                        <li class="menu-item"><a href="{{ url('/contact') }}"style="font-size: 18px;">Contact</a></li>
                                     </ul>
                                 </nav>
                             </div>

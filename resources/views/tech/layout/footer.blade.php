@@ -7,7 +7,7 @@
                     <img id="logo-img" src="" alt="" style="height: 150px; width: 250px;">
 
 
-                        <p style="color: black;">Our journey began with a commitment to provide comprehensive
+                        <p style="color: black;text-align: justify;">Our journey began with a commitment to provide comprehensive
                             solutions to protect and leverage your innovations.
                             .</p>
                         <!-- <ul class="social-link">
@@ -71,7 +71,7 @@
                             </div>
                             <div class="info">
 
-                                <p style="text-align: justify;">RAALTECH
+                                <p style="text-align: justify; font-size:16px;">RAALTECH
                                     Solutions,<br>
                                     ACE Innovation and Incubation
                                     Centre (AIIC)<br>
@@ -104,19 +104,34 @@
                      
                         <div class="widget about-widget mb-40">
 
-                            <ul class=""
-                                style="list-style: none; padding: 5px; display: flex; flex-direction: row;font-size: 25px;">
-                                <li style="margin-right: 10px;"><a href="https://www.facebook.com/"><i
-                                            class="fab fa-facebook" style="color: black;"></i></a></li>
-                                <li style="margin-right: 10px;"><a
-                                        href="https://api.whatsapp.com/send?phone=123456789"><i
-                                            class="fab fa-whatsapp" style="color: black;"></i></a></li>
-                                <li style="margin-right: 10px;"><a href="https://www.youtube.com/"><i
-                                            class="fab fa-youtube" style="color: black;"></i></a></li>
-                                <li style="margin-right: 10px;"><a href="https://www.linkedin.com/"><i
-                                            class="fab fa-linkedin" style="color: black;"></i></a></li>
-                                <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"
-                                            style="color: black;"></i></a></li>
+                           <ul class="social-link">
+                                <li>
+                                    <a href="https://www.facebook.com/profile.php?id=61556684204972 ">
+                                        <i class="fab fa-facebook" style="background-color: #3b5998; color: white; padding: 5px; border-radius: 50%;"></i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="whatsapp://send?phone=7845158684">
+                                        <i class="fab fa-whatsapp" style="background-color: #25D366; color: white; padding: 5px; border-radius: 50%;"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/channel/UCgiTSl_wU6rCivYx0FdU3sg">
+                                        <i class="fab fa-youtube" style="background-color: #FF0000; color: white; padding: 5px; border-radius: 50%;"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/in/raaltech-solutions-6046312b1/ ">
+                                        <i class="fab fa-linkedin" style="background-color: #0077B5; color: white; padding: 5px; border-radius: 50%;"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/raaltech_solutions/ ">
+                                        <i class="fab fa-instagram" style="background-color: #E4405F; color: white; padding: 5px; border-radius: 50%;"></i>
+                                    </a>
+                                </li>
+
                             </ul>
                         </div>
                     </div>
@@ -131,7 +146,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="copyright-text text-center">
-                        <p>Copyright © 2024. All right reserved. Design by <span>OrangeMegaSoftware</span>.</p>
+                        <p>Copyright © 2024. All right reserved. Design by <a href="https://orangemegasoftware.com/" target="_blank"><span>OrangeMegaSoftware</span></a>
+.</p>
                     </div>
                 </div>
             </div>

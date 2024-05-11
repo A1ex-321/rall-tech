@@ -3,7 +3,7 @@
   color: white; /* Optionally, you can also change the text color */
 }
 </style> -->
-<header id="header" class="header fixed-top d-flex align-items-center">
+<header id="header" class="header fixed-top d-flex align-items-center" style="justify-content:space-between">
 
   <div class="d-flex align-items-center justify-content-between">
     <a class="logo d-flex align-items-center">

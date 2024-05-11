@@ -102,6 +102,8 @@ class TechadminController extends Controller
         Team::create([
             'image' => $filename,
             'name' => $request->name,
+            'design' => $request->design ?? null,
+            'new' => $request->new ?? null
 
         ]);
         return redirect('admin/addteams/list')->with('success', 'uploaded successfully.');
@@ -120,6 +122,8 @@ class TechadminController extends Controller
         }
         $user->image=$filename;
         $user->name=$request->name;
+         $user->design=$request->design;
+        $user->new=$request->new;
         $user->save();
         return redirect('admin/addteams/list')->with('success', 'updated successfully.');
     }

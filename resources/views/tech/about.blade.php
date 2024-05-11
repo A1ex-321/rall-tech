@@ -40,7 +40,7 @@
                     <div class="features-box mb-40">
                         <div class="features-content">
 
-                            <p><b>Welcome to
+                            <p style="text-align: justify;"><b>Welcome to
                                     RAALTECH
                                     Solutions</b>, your trusted partner in the realm of Intellectual
                                 Property Rights (IPR) services. With a global footprint and a commitment to excellence,
@@ -48,7 +48,7 @@
                                 dedicated to safeguarding and enhancing the value of your intellectual assets in India
                                 and
                                 abroad</p>
-                            <p>At
+                            <p style="text-align: justify;">At
                                 RAALTECH
                                 Solutions, we understand that in today's fast
                                 -
@@ -74,17 +74,16 @@
                     <div class="features-box mb-40">
                         <div class="features-content">
                             <h4>Introduction to RAALTECH Solutions</h4>
-                            <p>Raaltech Solutions, founded in 2021, is your dedicated partner in the dynamic world of
+                            <p style="text-align: justify;">Raaltech Solutions, founded in 2021, is your dedicated partner in the dynamic world of
                                 Intellectual P
                                 roperty. Our journey began with a commitment to provide comprehensive
                                 solutions to protect and leverage your innovations</p>
-                            <p>As a pioneering force in intellectual property services, we specialize in providing
+                            <p style="text-align: justify;">As a pioneering force in intellectual property services, we specialize in providing
                                 comprehensive solutions in Patents,
                                 Design Registr
                                 ation,
                                 Trademarks
-                                , C
-                                opyrights and
+                                , Copyrights and
                                 etc.</p>
 
                         </div>
@@ -101,7 +100,7 @@
                 <div class="row">
                     <div class="counter-column col-lg-4 col-md-6 col-sm-12">
                         <div class="counter-box">
-                            <h2><span class="counter">50</span> <span class="plus">+</span></h2>
+                            <h2><span class="counter">350</span> <span class="plus">+</span></h2>
                             <h4>Total Project</h4>
                         </div>
                     </div>
@@ -134,7 +133,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section-title section-white-title text-center mb-90">
-                        <h2 style="margin-top: 50px;">Design and Logo</h2>
+                        <h2 style="margin-top: 50px;">RAALTECH SOLUTIONS in Associated with</h2>
                         <div class="title-span-line text-center">
                             <span class="line line-1"></span>
                             <span class="line line-2"></span>

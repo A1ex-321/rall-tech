@@ -11,7 +11,7 @@ class Team extends Model
     protected $table = 'team';
 
     protected $fillable = [
-        'name','image' 
+        'name','image','design','new' 
     ];
  
 }
