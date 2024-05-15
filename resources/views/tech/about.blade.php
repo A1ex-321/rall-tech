@@ -145,13 +145,13 @@
         </div>
         <div class="custom-container">
         <div class="">
-            <div class="row team-slide-one" style="margin-top: -50px;">
-                @foreach($logo as $image)
-                <div>
-                    <img src="{{ asset('public/images/' . $image->image) }}" alt="" style="height: 150px; width:80%; margin: auto;">
-                </div>
-                @endforeach
-            </div>
+        <div class="row team-slide-one" style="margin-top: -50px; overflow: hidden;">
+    @foreach($logo as $image)
+    <div class="team-slide-item">
+        <img src="{{ asset('public/images/' . $image->image) }}" alt="" style="height: 150px; width:80%; margin: auto;">
+    </div>
+    @endforeach
+</div>
         </div>
     </div>
     </section>
@@ -175,7 +175,7 @@
                     <div class="testimonial-item">
 
                         <div class="td-content">
-                            <p><b>Expertise:</b>
+                            <p style="text-align: justify;"><b>Expertise:</b>
                                 Our team comprises experienced legal professionals and intellectual property
                                 specialists who possess in
                                 -
@@ -188,7 +188,7 @@
                     <div class="testimonial-item">
 
                         <div class="td-content">
-                            <p><b>
+                            <p style="text-align: justify;"><b>
                                     Global Reach:</b>
                                 With a global network of associates, we offer our services not only in India but
                                 also worldwide, making us your go
@@ -202,7 +202,7 @@
                     <div class="testimonial-item">
 
                         <div class="td-content">
-                            <p><b>Tailored Solutions:</b>
+                            <p style="text-align: justify;"><b>Tailored Solutions:</b>
                                 We understand that every client is unique. That's why we provide
                                 personalized, cost
                                 -
@@ -216,7 +216,7 @@
                     <div class="testimonial-item">
 
                         <div class="td-content">
-                            <p><b>Dedication to Excellence</b>
+                            <p style="text-align: justify;"><b>Dedication to Excellence</b>
                                 We are committed to upholding the highest standards of ethics,
                                 transparency, and professionalism in every aspect of our work.</p>
 
@@ -227,7 +227,7 @@
                     <div class="testimonial-item">
 
                         <div class="td-content">
-                            <p><b>Client
+                            <p style="text-align: justify;"><b>Client
                                     -
                                     Centric Approach</b>
                                 Your success is our success. We prioritize clear communication and
@@ -241,7 +241,7 @@
                     <div class="testimonial-item">
 
                         <div class="td-content">
-                            <p><b>Commitment</b>
+                            <p style="text-align: justify;"><b>Commitment</b>
                                 Our strength lies in our highly qualified and experienced team, dedi
                                 cated to managing projects
                                 for our clients with precision and excellence.</p>
@@ -253,7 +253,7 @@
                     <div class="testimonial-item">
 
                         <div class="td-content">
-                            <p><b>Partnerships for Excellence</b>
+                            <p style="text-align: justify;"><b>Partnerships for Excellence</b>
                                 We've partnered with reputable societies and knowledge experts to continuously enhance
                                 our
                                 skills. This commitment to growth directly impacts the quality
@@ -266,7 +266,7 @@
                     <div class="testimonial-item">
 
                         <div class="td-content">
-                            <p><b>Our Track Record</b>
+                            <p style="text-align: justify;"><b>Our Track Record</b>
                                 To date, we have successfully completed over
                                 4
                                 50
@@ -281,7 +281,7 @@
                     <div class="testimonial-item">
 
                         <div class="td-content">
-                            <p><b>Our expertise Domains</b>
+                            <p style="text-align: justify;"><b>Our expertise Domains</b>
                                 Engineering
                                 , Science,
                                 Medical/ Healthcare
@@ -302,7 +302,7 @@
                     <div class="testimonial-item">
 
                         <div class="td-content">
-                            <p><b>Collaborate with Us</b>
+                            <p style="text-align: justify;"><b>Collaborate with Us</b>
                                 At Raaltech Solutions, we look forward to joining you o
                                 n your journey to successful innovation.Let's work together to protect your ideas, advance your business, and make your inventive
                                 dreams a reality
@@ -314,4 +314,5 @@
             </div>
         </div>
     </section>
+
 @include('tech.layout.footer')

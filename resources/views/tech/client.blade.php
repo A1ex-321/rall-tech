@@ -118,7 +118,7 @@
     <div class="col-lg-10">
         <div class="filter-nav text-center mt-30 mb-10">
             <ul class="filter-btn">
-                <li data-filter="*" class="active">Some of our client</li>
+                <li data-filter="*" class="active">Some of our clients</li>
             </ul>
         </div>
     </div>
@@ -156,7 +156,7 @@
     <div class="col-lg-10">
         <div class="filter-nav text-center mt-30 mb-10">
             <ul class="filter-btn">
-                <li data-filter="*" class="active">Some of our client</li>
+                <li data-filter="*" class="active">Some of our clients</li>
             </ul>
         </div>
     </div>
@@ -172,7 +172,7 @@
 
                     <img src="{{ asset('public/images/' . $record->title) }}" alt="" style="height: 80px; ; width:82px; margin-left:100px; ">
                 </div>
-                <p class="testimonial-text">{{ $record->description }}</p>
+                <p style=" text-align: justify;" class="testimonial-text">{{ $record->description }}</p>
             </div>
             @endforeach
 

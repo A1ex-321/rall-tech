@@ -21,7 +21,9 @@ class TechController extends Controller
 {
     public function home(Request $request){
         $data['service'] = Addservice::all();
-        $data['team'] = Team::all();
+        // $data['team'] = Team::all();
+        $data['team'] = Team::orderBy('order', 'asc')->get();
+
         $data['image'] = Client::where('is_client', 0)->get();
         $data['test'] = Client::where('is_client', 1)->get();
         $data['event'] = blogsco::get();
@@ -41,7 +43,7 @@ class TechController extends Controller
         return view('tech.service', $data);
     }
     public function team(Request $request){
-        $data['getRecord'] = Team::all();
+        $data['getRecord'] = Team::orderBy('order', 'asc')->get();
         return view('tech.team',$data);
     }
     public function client(Request $request){

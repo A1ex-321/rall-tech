@@ -29,8 +29,14 @@
                             <i class="icofont-email"></i>
                         </div>
                         <div class="info">
-                            <p><a href="mailto:{{$record->email}}">{{$record->email}}</a></p>
-                        </div>
+    @php
+    $emails = explode(',', $record->email);
+    @endphp
+    @foreach($emails as $email)
+        <p><a href="mailto:{{ trim($email) }}">{{ trim($email) }}</a></p>
+    @endforeach
+</div>
+
                     </div>
                     <div class="info-box d-flex align-items-start">
                         <div class="icon">

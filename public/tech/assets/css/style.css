@@ -89,7 +89,7 @@ h1 {
 }
 
 h2 {
-  font-size: 50px;
+  font-size: 36px;
   line-height: 60px;
 }
 
@@ -1532,7 +1532,7 @@ button {
     margin-right: 0px;
   }
 }
-.about-area-v1 .about-content-box .section-title h2 span.thin {
+.about-area-v1 .about-content-box .section-title h3 span.thin {
   font-weight: 300;
   font-style: italic;
 }

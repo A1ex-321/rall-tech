@@ -71,15 +71,14 @@
                             </div>
                             <div class="info">
 
-                                <p style="text-align: justify; font-size:16px;">RAALTECH
-                                    Solutions,<br>
-                                    ACE Innovation and Incubation
-                                    Centre (AIIC)<br>
-                                    Amrita University,<br>
-                                    Coimbatore
+                                <p style="text-align: justify; font-size:16px;">&nbsp;&nbsp;RAALTECH
+                                    Solutions<br>&nbsp;ACE Innovation and Incubation
+                                    &nbsp;&nbsp;&nbsp;Centre (AIIC)<br>
+                                    &nbsp;&nbsp;&nbsp;Amrita University<br>
+                                    &nbsp;&nbsp;&nbsp;Coimbatore
                                     -
-                                    641 112,<br>
-                                    India.</p>
+                                    641 112<br>
+                                    &nbsp;&nbsp;&nbsp;India</p>
                             </div>
                         </div>
                         <div class="info-box d-flex align-items-start">
@@ -88,7 +87,7 @@
                             </div>
                             <div class="info">
 
-                                <p><a href="tel:+88568426834"><b>+91 70940 770 40.</b></a></p>
+                                <p><a href="tel:+88568426834"><b>&nbsp;&nbsp; +91 70940 770 40</b></a></p>
                             </div>
                         </div>
                         <div class="info-box d-flex align-items-start ">
@@ -97,7 +96,7 @@
                             </div>
                             <div class="info">
 
-                                <p><a href="mailto:support24@gmail.com">info@raaltechsolutions.com, <br>raaltechsolutions@gmail.com</a></p><br>
+                                <p><a href="mailto:support24@gmail.com"> &nbsp;&nbsp;info@raaltechsolutions.com, <br> &nbsp;&nbsp; &nbsp;&nbsp;raaltechsolutions@gmail.com</a></p><br>
                                
                             </div>
                         </div>
@@ -107,30 +106,31 @@
                            <ul class="social-link">
                                 <li>
                                     <a href="https://www.facebook.com/profile.php?id=61556684204972 ">
-                                        <i class="fab fa-facebook" style="background-color: #3b5998; color: white; padding: 5px; border-radius: 50%;"></i>
+                                        <i class="fab fa-facebook" style="background-color: #3b5998; color: white; padding: 5px; border-radius: 50%;font-size: 25px;"></i>
                                     </a>
                                 </li>
 
                                 <li>
                                     <a href="whatsapp://send?phone=7845158684">
-                                        <i class="fab fa-whatsapp" style="background-color: #25D366; color: white; padding: 5px; border-radius: 50%;"></i>
+                                        <i class="fab fa-whatsapp" style="background-color: #25D366; color: white; padding: 5px; border-radius: 50%;font-size: 25px;"></i>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="https://www.youtube.com/channel/UCgiTSl_wU6rCivYx0FdU3sg">
-                                        <i class="fab fa-youtube" style="background-color: #FF0000; color: white; padding: 5px; border-radius: 50%;"></i>
+                                        <i class="fab fa-youtube" style="background-color: #FF0000; color: white; padding: 5px; border-radius: 50%;font-size: 25px;"></i>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="https://www.linkedin.com/in/raaltech-solutions-6046312b1/ ">
-                                        <i class="fab fa-linkedin" style="background-color: #0077B5; color: white; padding: 5px; border-radius: 50%;"></i>
+                                        <i class="fab fa-linkedin" style="background-color: #0077B5; color: white; padding: 5px; border-radius: 50%;font-size: 25px;"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.instagram.com/raaltech_solutions/ ">
-                                        <i class="fab fa-instagram" style="background-color: #E4405F; color: white; padding: 5px; border-radius: 50%;"></i>
-                                    </a>
-                                </li>
+    <a href="https://www.instagram.com/raaltech_solutions/">
+        <i class="fab fa-instagram" style="background-color: #E4405F; color: white; padding: 10px; border-radius: 50%; font-size: 25px;"></i>
+    </a>
+</li>
+
 
                             </ul>
                         </div>

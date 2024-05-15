@@ -16,7 +16,7 @@
   }
 </style>
 
-<section class="breadcrumbs-section bg_cover" style="background-color: rgb(111, 113, 143);">
+<section class="breadcrumbs-section bg_cover" style="height:9px;padding-top:10px;background-color: rgb(111, 113, 143);">
   <div class="container">
     <div class="row">
       <div class="col-lg-8">
@@ -41,7 +41,7 @@
       <div class="col-lg-12">
         <div class="sidebar-widget-area">
           <div class="widget widget-recent-post mb-10">
-            <h4 class="widget-title">Recent Posts</h4>
+            <!-- <h4 class="widget-title">Recent Posts</h4> -->
             <ul class="recent-post-widget">
               @foreach($getRecord as $index => $record1)
                 <li class="post-thumbnail-content" style="height:300px;">
@@ -53,7 +53,7 @@
                   <div class="post-title-date" style="width:100%;">
                     <h6><a href="{{ route('singleevent', ['id' => $record1->id]) }}">{{ $record1->title }}</a></h6>
                     <h6 class="card-subtitle mb-2 text-muted">{{ $record1->tech }}</h6>
-                    <span class="posted-on"><i class="fas fa-calendar-alt"></i>{{ \Carbon\Carbon::parse($record1->created_at)->format('F j, Y') }}</span>
+                    <!-- <span class="posted-on"><i class="fas fa-calendar-alt"></i>{{ \Carbon\Carbon::parse($record1->created_at)->format('F j, Y') }}</span> -->
                     <!-- PHP code to truncate the description to 5 words for mobile view -->
                     <?php
                       $descriptionWords = explode(' ', $record1->description);

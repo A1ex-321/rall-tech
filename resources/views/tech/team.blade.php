@@ -146,7 +146,7 @@
                 <div class="col-lg-8">
                     <div class="section-title text-center mb-60">
                         <div class="sub-title">
-                            <span class="title" style="margin-top: 40px;">Our Team</span>
+                            <!-- <span class="title" style="margin-top: 40px;">Our Team</span> -->
 
                         </div>
                         <h2>We Always Work With
@@ -162,8 +162,9 @@
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
                                 <img src="{{ asset('public/images/' . $record->image) }}" alt="" style="width:250px;height:250px; border-radius: 50%;margin-top:10px;">
-                                <h4>{{ $record->name }}</h4>
-                                
+                                <h5 style="margin-top: 10px; padding-left: 10px; padding-right: 10px;">{{ $record->name }}</h5>
+<h5 style="padding-left: 10px; padding-right: 10px;">{{ $record->design }}</h5>
+
 
                             </div>
                             <div class="flip-card-back">
@@ -224,7 +225,7 @@
                                 <i class="icon">“</i>
                             </div> -->
                     <div class="td-content">
-                        <p><b>Our Team</b><br>
+                        <p style="text-align:justify;"><b>Our Team</b><br>
                             At RAALTECH Solutions, success is a collaborative effort. We bring
                             together cross
                             -
@@ -234,9 +235,9 @@
                             reparation to
                             hearings, our professionals navigate every aspect.
                         </p>
-                        <p>We empower our team to lead, ensuring successful outcomes, strong
+                        <p  style="text-align:justify;">We empower our team to lead, ensuring successful outcomes, strong
                             client relationships, and maximum customer success.</p>
-                        <p>W
+                        <p  style="text-align:justify;">W
                             e don't just work; we thrive together, driving innovation, excellence,
                             and lasting client satisfaction.</p>
                     </div>

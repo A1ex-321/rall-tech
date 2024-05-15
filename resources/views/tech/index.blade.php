@@ -1,16 +1,71 @@
 @include('tech.layout.header')
 
-<style>.card:hover {
+<style>
+    .card:hover {
         pointer-events: none;
     }
-        .icofont-arrow-left {
-    display: none;
-}
-.icofont-arrow-right
-{
-    display: none;
 
-}</style>
+    .icofont-arrow-left {
+        display: none;
+    }
+
+    .icofont-arrow-right {
+        display: none;
+
+    }
+
+    #but {
+        display: block;
+        width: fit-content;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        /* Centers the button horizontally */
+    }
+
+    /* Media query for screens smaller than 768px (typical mobile devices) */
+    @media (max-width: 767.98px) {
+        #but {
+            text-align: center;
+            /* Aligns the button text center within its container */
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        .about-img-box img {
+            margin-left: 0px !important;
+        }
+    }
+
+    /* Disable hover effect by disabling pointer events */
+    #lo {
+        display: inline-block;
+        /* Ensure it takes up only as much width as needed */
+        padding: 8px 16px;
+        /* Adjust padding to make the button smaller */
+        font-size: 14px;
+        /* Adjust font size to make the button smaller */
+        margin-top: 0px !important;
+        /* Reset margin */
+        text-align: center;
+        /* Center the text within the button */
+        text-decoration: none;
+        /* Remove default underline */
+        border: 1px solid #000;
+        /* Add border for better visibility */
+        border-radius: 35px;
+        /* Add border radius for rounded corners */
+        float: right;
+        background-color: #f9580e;
+        color: white;
+    }
+
+    /* Media query for desktop view */
+    @media (max-width: 768px) {
+        #lo {
+            align-items: center !important;
+        }
+    }
+</style>
 <!--====== Start Banner section ======-->
 <section class="banner-area-v1">
     <div class="hero-slider-one">
@@ -21,7 +76,7 @@
                     <div class="col-lg-6">
                         <div class="hero-content" style="text-align: center;">
                             <h2 style="color: aliceblue; white-space: nowrap;">
-                                <span>Welcome to</span> RAAL TECH SOLUTIONS
+                                <span>Welcome to</span> RAALTECH SOLUTIONS
                             </h2>
                             <a href="{{ url('/contact') }}" class="main-btn">GET STARTED</a>
                         </div>
@@ -35,9 +90,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="hero-content" style="text-align: center; ">
-                            <h2 style="color: aliceblue;"><span>We Empowering</span>
-                                RAAL TECH
+                        <div class="hero-content" style="">
+                            <h2 style="color: aliceblue;"><span>We empower Startups,</span>
+                                MSME, Institutions & Inventors
                             </h2>
 
                             <a href="contact.html" class="main-btn">GET STARTED</a>
@@ -73,10 +128,11 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="about-img-box">
-                    <img src="{{ asset('public/tech/assets/images/2121.png') }}" alt="" style="margin-bottom: -100px;margin-left:200px;margin-top:100px;">
+                    <img src="{{ asset('public/tech/assets/images/2121.png') }}" alt="" style="margin-bottom: -100px;margin-left: 16%;margin-top:10%; max-width: 100%; height: auto;">
 
                 </div>
             </div>
+
             <div class="col-lg-6">
                 <div class="about-content-box">
                     <div class="section-title mb-35">
@@ -86,27 +142,25 @@
                                         <i class="flaticon-digger"></i>
                                     </div> -->
                         </div>
-                        <h2>Introduction <span> to</span> RAALTECH <span class="thin"> Solutions.</span></h2>
+                        <h3><span>Introduction to RAALTECHSolutions.</span>
+                        </h3>
                     </div>
-                    <p>“
+                    <p style="text-align: justify;">
+                        Raaltech Solutions, founded in 2021, is your dedicated partner in the dynamic world of Intellectual Property. Our journey began with a commitment to provide comprehensive solutions to protect and leverage your innovations.
+                    </p>
 
-                     Raaltech Solutions, founded in 2021, is your dedicated partner in the dynamic world
-                                of
-                                Intellectual P
-                                roperty. Our journey began with a commitment to provide comprehensive
-                                solutions to protect and leverage your innovations.</p>
-                        <div class="section-title mb-35">
-                            
-                             <h2>Welcome <span> to</span> RAALTECH <span class="thin"> Solutions.</span></h2>
-                                <p>“
+                    <div class="section-title mb-35">
 
-                        We are your trusted partner in the realm of Intellectual
-                        Property Rights (IPR) services. With a global footprint and a commitment to excellence, we
-                        are
-                        dedicated to safeguarding and enhancing the value of your intellectual assets in India and
-                        abroad .</p>
-                        </div>
-                        <a href="{{ url('/about') }}" class="main-btn">View More</a>
+                        <h4>Welcome <span> to</span> RAALTECH <span class="thin"> Solutions.</span></h4>
+                        <p style="text-align: justify;">“
+
+                            We are your trusted partner in the realm of Intellectual
+                            Property Rights (IPR) services. With a global footprint and a commitment to excellence, we
+                            are
+                            dedicated to safeguarding and enhancing the value of your intellectual assets in India and
+                            abroad .</p>
+                    </div>
+                    <a href="{{ url('/about') }}" id="but" class="main-btn">View More</a>
                 </div>
             </div>
         </div>
@@ -139,9 +193,9 @@
             <div class="col-lg-4">
                 <div class="service-item text-center mb-55" style="height: 350px;">
                     <div class="-img">
-                        <img src="{{ asset('public/images/' . $item->image) }}" alt="" style="height: 100px; width: 110px; margin-left: 100px;">
+                        <img src="{{ asset('public/images/' . $item->image) }}" alt="" style="height: 100px; width: 110px;margin-left:-40px;margin-top:-40px;border-radius:3px;">
                     </div>
-                    <div class="service-content">
+                    <div class="service-content" style="margin-top:40px;">
                         <span class="position" style="font-size: 25px; font-weight: bold;">{{ $item->title }}</span>
                         <h5 class="title"><a>{{ $item->description }}</a></h5>
                     </div>
@@ -184,14 +238,13 @@
 
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="team-item mb-40">
-                        <div class="team-img" style="object-fit: cover; aspect-ratio: 1/1;">
+                        <div class="team-img" style="object-fit: cover; ">
                             <img src="{{ asset('public/images/' . $member->image) }}" alt="{{ $member->name }}" style="height: 200px; width: 200px; object-fit:cover;">
                         </div>
-                        <div class="team-info">
-                            <div class=""></div>
-                            <div class="team-member-info d-flex align-items-center" style="height:10px;">
+                        <div class="" style="pointer-events: none;">
+                            <div class="team-member-info d-flex align-items-center" style="">
                                 <div class="">
-                                    <h4 style="height:10px; font-size:16px;"><a>{{ $member->name }}</a></h4>
+                                    <h5 style="text-aligh:center;margin-top:4px;margin-left:32px;"><a>{{ $member->name }}</a></h5>
                                 </div>
                             </div>
                         </div>
@@ -204,9 +257,11 @@
 
 
             </div>
-            <a href="{{ url('/team') }}" class="main-btn" style="margin-top: 0px;margin-left: 200px;">View More</a>
+            <a href="{{ url('/team') }}" class="mai" id="lo" style="margin-top: 0px;">View More</a>
+
         </div>
     </section><!--====== End Team-area section ======-->
+
 </div>
 
 <div class="team1">
@@ -304,7 +359,7 @@
                 @endforeach
             </div>
 
-
+            <a href="{{ url('/team') }}" class="mai" id="lo" style="margin-top: 0px;">View More</a>
 
         </div>
     </section>
@@ -373,7 +428,7 @@
 
                     <img src="{{ asset('public/images/' . $testimonial->title) }}" alt="" style="height: 70px;  width:90px;margin-left: 100px; ">
                 </div>
-                <p class="testimonial-text">"{{ $testimonial->description }}"</p>
+                <p class="testimonial-text" style=" text-align: justify;">"{{ $testimonial->description }}"</p>
             </div>
             @endforeach
 
@@ -410,12 +465,12 @@
                     <div class="blog-post-item ">
                         <a href="{{ route('singleevent', ['id' => $post->id]) }}" data-id="{{ $post->id }}" class="post-thumbnail">
                             <img src="{{ asset('public/images/' . $post->image) }}" style="width:100%;height:200px;" alt="blog-grid">
-                            <span class="date">{{ \Carbon\Carbon::parse($post->created_at)->format('d F, Y') }}</span>
+                            <!-- <span class="date">{{ \Carbon\Carbon::parse($post->created_at)->format('d F, Y') }}</span> -->
                         </a>
 
                         <div class="entry-content" style="border-bottom: 1px solid black;">
                             <h3 class="title" style="height:40px;"><a href="{{ url('/event') }}">{{ $post->title }}</a></h3>
-                            <a href="{{ route('singleevent', ['id' => $post->id]) }}" data-id="{{ $post->id }}" class="main-btn" style="margin-left:10px; margin-top:10px;">Read more</a>
+                            <!-- <a href="{{ route('singleevent', ['id' => $post->id]) }}" data-id="{{ $post->id }}" class="main-btn" style="margin-left:10px; margin-top:10px;">Read more</a> -->
 
                         </div>
 
@@ -436,21 +491,21 @@
 <div class="resource">
     <section class="project-area-v1" style="margin-top: -150px; padding-top:20px;">
         <div class="project-main-section">
-            
+
 
             <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section-title text-center ">
-                        <div class="sub-title">
-                            <span class="title">Resources</span>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="section-title text-center ">
+                            <div class="sub-title">
+                                <span class="title">Resources</span>
 
+                            </div>
+                            <h2>Learn More From Our
+                                Latest <span>Resource.</span></h2>
                         </div>
-                        <h2>Learn More From Our
-                            Latest <span>Resource.</span></h2>
                     </div>
                 </div>
-            </div>
             </div>
         </div>
         <div class="" style="background-color:#abadb0; padding-top:20px;">
@@ -459,15 +514,15 @@
                     @foreach ($resource as $resource)
                     <div class="col-lg-4">
                         <div class="project-item">
-                            <div class="project-img" >
-                            <a href="{{ url('/singleresource', $resource->id) }}">
-    <img src="{{ asset('public/images/' . $resource->image) }}" alt="" style="height: 186px; width: 286px; border-radius:10px;object-fit:cover;">
-</a>
+                            <div class="project-img">
+                                <a href="{{ url('/singleresource', $resource->id) }}">
+                                    <img src="{{ asset('public/images/' . $resource->image) }}" alt="" style="height: 186px; width: 286px; border-radius:10px;object-fit:cover;">
+                                </a>
 
                                 <div class="">
                                     <div class="project-content">
                                         <div class="icon">
-                                            <a href="{{ asset('public/images/' . $resource->image) }}" style="height:10px;"class="popup-icon img-popup"></a>
+                                            <a href="{{ asset('public/images/' . $resource->image) }}" style="height:10px;" class="popup-icon img-popup"></a>
                                         </div>
                                     </div>
                                 </div>

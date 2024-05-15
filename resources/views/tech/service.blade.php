@@ -35,7 +35,7 @@
                     <div class="-img">
                         <img src="{{ asset('public/images/' . $record->image) }}" alt="" style="height: 100px; width: 100px;  margin-left: -269px; margin-top:-40px;border-radius:3px;  ">
                     </div>
-                    <div class="service-content">
+                    <div class="service-content" style="margin-top:44px;">
                         <span class="position" style="font-size: 25px; font-weight: bold;">{{ $record->title }}</span>
                         <h5 class="title"><a>{{ $record->description }}</a></h5>
                     </div>

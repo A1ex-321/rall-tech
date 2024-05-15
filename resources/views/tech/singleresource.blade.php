@@ -144,6 +144,11 @@
                 event.preventDefault(); // Prevents the default behavior (opening the link)
                 window.open(link.href, '_blank');
             });
+            const anchorInContainer1 = blogListContainer.querySelectorAll('p');
+
+anchorInContainer1.forEach(paragraph => {
+    paragraph.style.textAlign = 'justify';
+});
         });
     });
 </script>

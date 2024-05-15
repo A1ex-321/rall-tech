@@ -9,7 +9,7 @@
     }
 </style>
         <!--====== Start breadcrumbs section ======-->
-        <section class="breadcrumbs-section bg_cover" style="background-image: url('{{ asset('public/tech/assets/images/resources.jpg') }}');">
+        <section class="breadcrumbs-section bg_cover" style="background-image: url('{{ asset('public/tech/assets/images/resources.jpg') }}');padding:5px;">
 
 
             <div class="container">
@@ -44,8 +44,10 @@
     <div class="entry-content">
         <div class="post-meta d-flex justify-content-between">
             <ul class="meta-link">
-                <li><span><i class="icofont-user-alt-7"></i><a>{{ \Carbon\Carbon::parse($record->created_at)->format('F j, Y') }}
-</a></span></li>
+                <li>
+                    <!-- <span><i class="icofont-user-alt-7"></i><a>{{ \Carbon\Carbon::parse($record->created_at)->format('F j, Y') }}
+</a></span> -->
+</li>
             </ul>
         </div>
         <h3 class="title"><a>{{ $record->title }}</a></h3>
@@ -71,10 +73,10 @@
 </h6></div>
                         
 
-                        <span class="posted-on" style="font-size: smaller;">
+                        <!-- <span class="posted-on" style="font-size: smaller;">
     <i class="fas fa-calendar-alt"></i>
     {{ \Carbon\Carbon::parse($record1->created_at)->format('F j, Y') }}
-</span>
+</span> -->
 
                         </div>
                     </li>
