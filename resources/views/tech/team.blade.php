@@ -2,60 +2,74 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
     @media only screen and (max-width: 767px) {
+
         /* Adjust flip card size for smaller devices */
-.flip-card {
-    background-color: transparent;
-    width: 100%; /* Adjust width to fit smaller screens */
-    height: auto; /* Allow height to adjust automatically based on content */
-    perspective: 1000px;
-    margin-bottom: 20px; /* Add margin for spacing between flip cards */
-}
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            /* Adjust width to fit smaller screens */
+            height: auto;
+            /* Allow height to adjust automatically based on content */
+            perspective: 1000px;
+            margin-bottom: 20px;
+            /* Add margin for spacing between flip cards */
+        }
 
-/* Adjust flip card front and back size for smaller devices */
-.flip-card-front, .flip-card-back {
-    width: 100%;
-    height: auto;
-    padding: 20px; /* Add padding for better readability */
-}
+        /* Adjust flip card front and back size for smaller devices */
+        .flip-card-front,
+        .flip-card-back {
+            width: 100%;
+            height: auto;
+            padding: 20px;
+            /* Add padding for better readability */
+        }
 
-/* Adjust flip card image size for smaller devices */
-.flip-card-front img {
-    width: 100%; /* Make image responsive */
-    height: auto; /* Allow height to adjust automatically based on width */
-    border-radius: 50%;
-    margin-bottom: 10px; /* Add margin for spacing between image and name */
-}
+        /* Adjust flip card image size for smaller devices */
+        .flip-card-front img {
+            width: 100%;
+            /* Make image responsive */
+            height: auto;
+            /* Allow height to adjust automatically based on width */
+            border-radius: 50%;
+            margin-bottom: 10px;
+            /* Add margin for spacing between image and name */
+        }
 
-/* Adjust flip card name size for smaller devices */
-.flip-card-front h4 {
-    font-size: 18px; /* Adjust font size for smaller devices */
-    margin-bottom: 20px; /* Add margin for spacing between name and details */
-}
+        /* Adjust flip card name size for smaller devices */
+        .flip-card-front h4 {
+            font-size: 18px;
+            /* Adjust font size for smaller devices */
+            margin-bottom: 20px;
+            /* Add margin for spacing between name and details */
+        }
 
-/* Adjust flip card role and details size for smaller devices */
-.advisor-info {
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
+        /* Adjust flip card role and details size for smaller devices */
+        .advisor-info {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
 
-.role {
-    font-size: 16px; /* Adjust font size for smaller devices */
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-}
+        .role {
+            font-size: 16px;
+            /* Adjust font size for smaller devices */
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
 
-.details {
-    font-size: 14px; /* Adjust font size for smaller devices */
-    line-height: 1.6;
-    color: #666;
-    margin-bottom: 8px;
-}
+        .details {
+            font-size: 14px;
+            /* Adjust font size for smaller devices */
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 8px;
+        }
 
     }
+
     .flip-card {
         background-color: transparent;
         width: 360px;
@@ -98,27 +112,26 @@
     }
 
     .advisor-info {
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
 
-.role {
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-}
+    .role {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+    }
 
-.details {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #666;
-    margin-bottom: 8px;
-}
-
+    .details {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #666;
+        margin-bottom: 8px;
+    }
 </style>
 
 <!--====== Start breadcrumbs section ======-->
@@ -163,17 +176,17 @@
                             <div class="flip-card-front">
                                 <img src="{{ asset('public/images/' . $record->image) }}" alt="" style="width:250px;height:250px; border-radius: 50%;margin-top:10px;">
                                 <h5 style="margin-top: 10px; padding-left: 10px; padding-right: 10px;">{{ $record->name }}</h5>
-<h5 style="padding-left: 10px; padding-right: 10px;">{{ $record->design }}</h5>
+                                <h5 style="padding-left: 10px; padding-right: 10px;font-size:17px;">{{ $record->design }}</h5>
 
 
                             </div>
                             <div class="flip-card-back">
                                 <h3 style="margin-top:20px;color: #6060d7;">{{ $record->name }}</h3>
                                 <div class="advisor-info">
-    <p class="role" style="color: #6975af;">{{$record->design}}</p>
-    <p class="details" style="color: #dd5b33;">{{$record->new}}</p>
-    
-</div>
+                                    <p class="role" style="color: #6975af;">{{$record->design}}</p>
+                                    <p class="details" style="color: #dd5b33;">{{$record->new}}</p>
+
+                                </div>
 
                                 <!-- <p>{{$record->design}}</p>
                                 <p>{{$record->new}}</p> -->
@@ -235,11 +248,7 @@
                             reparation to
                             hearings, our professionals navigate every aspect.
                         </p>
-                        <p  style="text-align:justify;">We empower our team to lead, ensuring successful outcomes, strong
-                            client relationships, and maximum customer success.</p>
-                        <p  style="text-align:justify;">W
-                            e don't just work; we thrive together, driving innovation, excellence,
-                            and lasting client satisfaction.</p>
+                       
                     </div>
                 </div>
             </div>
@@ -248,19 +257,15 @@
                     <!-- <div class="td-thumb bg_cover" style="background-image: url(assets/images/t-thumb-2.jpg);">
                                 <i class="icon">“</i>
                             </div> -->
-                    <div class="td-content">
-                        <p><b>List of Designations:</b><br>
-                        </p>
-                        <ul>
-                            <li>* Managing Director</li>
-                            <li>* Technical Lead</li>
-                            <li>* Business Development</li>
-                            <li>* Patent Litigation Trainee</li>
-                            <li>* Design Engineer</li>
-                            <li>* Trademark Attorney</li>
+                     <div class="td-content">
+                     <p style="text-align:justify;">We empower our team to lead, ensuring successful outcomes, strong
+                            client relationships, and maximum customer success.</p>
+                        <p style="text-align:justify;">W
+                            e don't just work; we thrive together, driving innovation, excellence,
+                            and lasting client satisfaction.</p>
                         </ul>
 
-                    </div>
+                    </div> 
                 </div>
             </div>
 

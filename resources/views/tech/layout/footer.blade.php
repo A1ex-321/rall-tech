@@ -1,10 +1,28 @@
+<style>
+.info p {
+        text-align: justify;
+        font-size: 16px;
+    }
+
+    /* Media query for mobile devices */
+    @media only screen and (max-width: 600px) {
+        .info p {
+            text-align: left; /* Align text to the left */
+            font-size: 14px; /* Adjust font size for better readability on smaller screens */
+        }
+        .info p span {
+            display: block; /* Change span elements to block level for better stacking */
+            margin-bottom: 5px; /* Add some space between each line */
+        }
+    }
+    </style>
 <footer class="footer-area footer-area-v1 bg_cover" style="background-color: rgb(219, 223, 231);">
     <div class="footer-widget pt-120 pb-90">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="widget about-widget mb-40">
-                    <img id="logo-img" src="" alt="" style="height: 150px; width: 250px;">
+                        <img id="logo-img" src="" alt="" style="height: 150px; width: 250px;">
 
 
                         <p style="color: black;text-align: justify;">Our journey began with a commitment to provide comprehensive
@@ -23,7 +41,7 @@
                     <div class="text-center">
                         <div style="display: flex; flex-direction: column;  ">
                             <a href="whatsapp://send?phone=7845158684" target="_blank">
-                            <img src="{{ asset('public/tech/assets/images/whatsapp-removebg-preview.png') }}" alt="Image Not Found" style="height: 80px; width: 80px;">
+                                <img src="{{ asset('public/tech/assets/images/whatsapp-removebg-preview.png') }}" alt="Image Not Found" style="height: 80px; width: 80px;">
 
                             </a>
                             <!-- <a href="tel:7845158684" >
@@ -70,16 +88,24 @@
                                 <i class="icofont-location-pin"></i>
                             </div>
                             <div class="info">
+    <p>
+        <span>RAALTECH Solutions</span>
+        <span>ACE Innovation and Incubation Centre (AIIC)</span>
+        <span>Amrita University</span>
+        <span>Coimbatore - 641 112</span>
+        <span>India</span>
+    </p>
+</div>
+                            <!-- <div class="info">
+                                <p style="font-size:16px;">
+                                    <span style="display: inline-block; width: 120px;">RAALTECH Solutions</span><br>
+                                    <span style="display: inline-block; width: 120px;">ACE Innovation and Incubation Centre (AIIC)</span><br>
+                                    <span style="display: inline-block; width: 120px;">Amrita University</span><br>
+                                    <span style="display: inline-block; width: 120px;">Coimbatore - 641 112</span><br>
+                                    <span style="display: inline-block; width: 120px;">India</span>
+                                </p>
+                            </div> -->
 
-                                <p style="text-align: justify; font-size:16px;">&nbsp;&nbsp;RAALTECH
-                                    Solutions<br>&nbsp;ACE Innovation and Incubation
-                                    &nbsp;&nbsp;&nbsp;Centre (AIIC)<br>
-                                    &nbsp;&nbsp;&nbsp;Amrita University<br>
-                                    &nbsp;&nbsp;&nbsp;Coimbatore
-                                    -
-                                    641 112<br>
-                                    &nbsp;&nbsp;&nbsp;India</p>
-                            </div>
                         </div>
                         <div class="info-box d-flex align-items-start">
                             <div class="icon">
@@ -96,14 +122,14 @@
                             </div>
                             <div class="info">
 
-                                <p><a href="mailto:support24@gmail.com"> &nbsp;&nbsp;info@raaltechsolutions.com, <br> &nbsp;&nbsp; &nbsp;&nbsp;raaltechsolutions@gmail.com</a></p><br>
-                               
+                                <p><a href="mailto:support24@gmail.com"> &nbsp;&nbsp;info@raaltechsolutions.com <br> &nbsp;&nbsp;raaltechsolutions@gmail.com</a></p><br>
+
                             </div>
                         </div>
-                     
+
                         <div class="widget about-widget mb-40">
 
-                           <ul class="social-link">
+                            <ul class="social-link">
                                 <li>
                                     <a href="https://www.facebook.com/profile.php?id=61556684204972 ">
                                         <i class="fab fa-facebook" style="background-color: #3b5998; color: white; padding: 5px; border-radius: 50%;font-size: 25px;"></i>
@@ -126,10 +152,10 @@
                                     </a>
                                 </li>
                                 <li>
-    <a href="https://www.instagram.com/raaltech_solutions/">
-        <i class="fab fa-instagram" style="background-color: #E4405F; color: white; padding: 10px; border-radius: 50%; font-size: 25px;"></i>
-    </a>
-</li>
+                                    <a href="https://www.instagram.com/raaltech_solutions/">
+                                        <i class="fab fa-instagram" style="background-color: #E4405F; color: white; padding: 10px; border-radius: 50%; font-size: 25px;"></i>
+                                    </a>
+                                </li>
 
 
                             </ul>
@@ -147,15 +173,15 @@
                 <div class="col-lg-10">
                     <div class="copyright-text text-center">
                         <p>Copyright © 2024. All right reserved. Design by <a href="https://orangemegasoftware.com/" target="_blank"><span>OrangeMegaSoftware</span></a>
-.</p>
+                            .</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </footer><!--====== End Footer ======-->
-    <!--====== back-to-top ======-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--====== back-to-top ======-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
     $(document).ready(function() {
@@ -167,9 +193,9 @@
                 success: function(response) {
                     if (response.image) {
                         console.log("data logo", response.image);
-    $('#logo-img').attr('src', response.image);
-    $('#logo-img1').attr('src', response.image);
-    $('link[rel="shortcut icon"]').attr('href', response.image); // Update favicon
+                        $('#logo-img').attr('src', response.image);
+                        $('#logo-img1').attr('src', response.image);
+                        $('link[rel="shortcut icon"]').attr('href', response.image); // Update favicon
 
                     } else {
                         console.error('No image found');
@@ -186,29 +212,29 @@
     });
 </script>
 
-    <a href="#" class="back-to-top"><i class="flaticon-up-arrow-angle"></i></a>
-    <!--====== Jquery js ======-->
-    <script src="{{ asset('public/tech/assets/js/vendor/modernizr-3.6.0.min.js') }}"></script>
-    <script src="{{ asset('public/tech/assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
-    <!--====== Bootstrap js ======-->
-    <script src="{{ asset('public/tech/assets/js/popper.min.js') }}"></script>
-    <script src="{{ asset('public/tech/assets/js/bootstrap.min.js') }}"></script>
-    <!--====== Slick js ======-->
-    <script src="{{ asset('public/tech/assets/js/slick.min.js') }}"></script>
-    <!--====== Magnific Popup js ======-->
-    <script src="{{ asset('public/tech/assets/js/jquery.magnific-popup.min.js') }}"></script>
-    <!--====== Isotope js ======-->
-    <script src="{{ asset('public/tech/assets/js/isotope.pkgd.min.js') }}"></script>
-    <!--====== Imagesloaded js ======-->
-    <script src="{{ asset('public/tech/assets/js/imagesloaded.pkgd.min.js') }}"></script>
-    <!--====== nice-select js ======-->
-    <script src="{{ asset('public/tech/assets/js/jquery.nice-select.min.js') }}"></script>
-    <!--====== counterup js ======-->
-    <script src="{{ asset('public/tech/assets/js/jquery.counterup.min.js') }}"></script>
-    <!--====== waypoints js ======-->
-    <script src="{{ asset('public/tech/assets/js/waypoints.min.js') }}"></script>
-    <!--====== Main js ======-->
-    <script src="{{ asset('public/tech/assets/js/main.js') }}"></script>
+<a href="#" class="back-to-top"><i class="flaticon-up-arrow-angle"></i></a>
+<!--====== Jquery js ======-->
+<script src="{{ asset('public/tech/assets/js/vendor/modernizr-3.6.0.min.js') }}"></script>
+<script src="{{ asset('public/tech/assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
+<!--====== Bootstrap js ======-->
+<script src="{{ asset('public/tech/assets/js/popper.min.js') }}"></script>
+<script src="{{ asset('public/tech/assets/js/bootstrap.min.js') }}"></script>
+<!--====== Slick js ======-->
+<script src="{{ asset('public/tech/assets/js/slick.min.js') }}"></script>
+<!--====== Magnific Popup js ======-->
+<script src="{{ asset('public/tech/assets/js/jquery.magnific-popup.min.js') }}"></script>
+<!--====== Isotope js ======-->
+<script src="{{ asset('public/tech/assets/js/isotope.pkgd.min.js') }}"></script>
+<!--====== Imagesloaded js ======-->
+<script src="{{ asset('public/tech/assets/js/imagesloaded.pkgd.min.js') }}"></script>
+<!--====== nice-select js ======-->
+<script src="{{ asset('public/tech/assets/js/jquery.nice-select.min.js') }}"></script>
+<!--====== counterup js ======-->
+<script src="{{ asset('public/tech/assets/js/jquery.counterup.min.js') }}"></script>
+<!--====== waypoints js ======-->
+<script src="{{ asset('public/tech/assets/js/waypoints.min.js') }}"></script>
+<!--====== Main js ======-->
+<script src="{{ asset('public/tech/assets/js/main.js') }}"></script>
 </body>
 
 </html>

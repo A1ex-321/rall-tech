@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+        <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
 
 @section('content')
 <style type="text/css">
@@ -191,14 +191,16 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
-        <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script>
-
+         <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script> 
+          <!-- <script src="https://cdn.ckeditor.com/4.24.0-lts/full/ckeditor.js"></script>   -->
         <script>
             document.addEventListener("DOMContentLoaded", function() {
                 ClassicEditor
                     .create(document.querySelector('#editor'), {
                         ckfinder: {
-                            uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}"
+                            
+                            uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}",
+
                         }
 
                         // Add any other CKEditor configurations as needed

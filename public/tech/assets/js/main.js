@@ -512,7 +512,7 @@ $(function($) {
         arrows: true,
         infinite: true,
         autoplay: true,
-        Speed: 10000,
+        Speed: 100,
         appendArrows: sliderArrows,
         prevArrow: '<div class="prev"><i class="icofont-arrow-left"></i></div>',
         nextArrow: '<div class="next"><i class="icofont-arrow-right"></i></div>',

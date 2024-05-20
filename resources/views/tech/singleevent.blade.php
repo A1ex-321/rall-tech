@@ -107,7 +107,7 @@
                             <h3>Make a call for
                                 any type query.</h3>
                             <i class="icofont-ui-call"></i>
-                            <h4 class="call"><a href="tel:+91 70940 770 40">+91 70940 770 4.</a></h4>
+                            <h4 class="call"><a href="tel:+91 70940 770 40" style="display:inline-block;font-size:27px;">+91 70940 770 40.</a></h4>
                         </div>
                     </div>
                 </div>

@@ -64,7 +64,7 @@
         }
 
         #data {
-            display: none;
+            display: none!important;
         }
 
         #data .row {
@@ -156,7 +156,7 @@
     <div class="col-lg-10">
         <div class="filter-nav text-center mt-30 mb-10">
             <ul class="filter-btn">
-                <li data-filter="*" class="active">Some of our clients</li>
+                <li data-filter="*" class="active">Some of our Testimonials</li>
             </ul>
         </div>
     </div>

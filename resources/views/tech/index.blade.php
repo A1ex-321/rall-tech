@@ -128,7 +128,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="about-img-box">
-                    <img src="{{ asset('public/tech/assets/images/2121.png') }}" alt="" style="margin-bottom: -100px;margin-left: 16%;margin-top:10%; max-width: 100%; height: auto;">
+                    <img src="{{ asset('public/tech/assets/images/2121.png') }}" alt="" style="margin-bottom: -100px;margin-left: 16%;margin-top:5%; max-width: 100%; height: auto;">
 
                 </div>
             </div>
@@ -137,7 +137,7 @@
                 <div class="about-content-box">
                     <div class="section-title mb-35">
                         <div class="sub-title">
-                            <span class="title" style="margin-top: 50px;">About Us</span>
+                            <!-- <span class="title" style="margin-top: 50px;">About Us</span> -->
                             <!-- <div class="icon">
                                         <i class="flaticon-digger"></i>
                                     </div> -->
@@ -388,7 +388,9 @@
                         @foreach ($image as $client)
                         <div class="col-6">
                             <div class="-box">
-                                <img src="{{ asset('public/images/' . $client->image) }}" style="width:100%; height:162px;" alt="">
+                            <img src="{{ asset('public/images/' . $client->image) }}" style="width:100%; height:162px; margin-top:10px;margin-bottom:25px; border: 1px solid rgba(0, 0, 0, 0.2);" alt="">
+
+
                             </div>
                         </div>
                         @endforeach
@@ -409,9 +411,7 @@
     <div class="col-lg-10">
         <div class="filter-nav text-center mt-30 mb-10">
             <ul class="filter-btn">
-                <li data-filter="*" class="active">Our Testimonials</li>
-
-
+                <li data-filter="*" class="active">Testimonials</li>
             </ul>
         </div>
     </div>
@@ -428,7 +428,7 @@
 
                     <img src="{{ asset('public/images/' . $testimonial->title) }}" alt="" style="height: 70px;  width:90px;margin-left: 100px; ">
                 </div>
-                <p class="testimonial-text" style=" text-align: justify;">"{{ $testimonial->description }}"</p>
+                <p class="testimonial-text" style="text-align: justify;">"{{ $testimonial->description }}"</p>
             </div>
             @endforeach
 

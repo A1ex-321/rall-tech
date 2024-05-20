@@ -3943,7 +3943,7 @@ button {
   }
 }
 .testimonial-area-v2 .testimonial-item {
-  padding-left: 120px;
+  /* padding-left: 120px; */
   position: relative;
 }
 @media (max-width: 991px) {

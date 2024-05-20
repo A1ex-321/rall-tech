@@ -103,11 +103,16 @@
     </div>
 </section><!--====== End Contact-page-section ======-->
 <!--====== Start contact_map section ======-->
+<div class="col-lg-8">
+
 <section class="contact-map-section">
     <div class="map_box">
         <iframe src="https://www.google.com/maps/d/embed?mid=1FNUq6LcTk8z41dKq4c0SYmH1Dgw&hl=en&ehbc=2E312F" width="640" height="480"></iframe>
     </div>
-</section><!--====== End contact_map section ======-->
+</section>
+</div>
+
+<!--====== End contact_map section ======-->
 <!--====== Start Footer ======-->
 <!-- Include SweetAlert CSS -->
 <!-- Include SweetAlert2 JavaScript -->

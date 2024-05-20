@@ -14,6 +14,7 @@
       display: none;
     }
   }
+
 </style>
 
 <section class="breadcrumbs-section bg_cover" style="height:9px;padding-top:10px;background-color: rgb(111, 113, 143);">
@@ -32,15 +33,15 @@
   </div>
 </section><!--====== End breadcrumbs-section ======-->
 
-<div class="container-fluid">
+<div class="container-fluid" style="margin-bottom:65px;">
   <div class="row">
     <div class="col-lg-2">
       <!-- Your sidebar content goes here if you have any -->
     </div>
-    <div class="col-lg-10">
+    <div class="col-lg-8">
       <div class="col-lg-12">
         <div class="sidebar-widget-area">
-          <div class="widget widget-recent-post mb-10">
+          <div class="widget widget-recent-post mb-69">
             <!-- <h4 class="widget-title">Recent Posts</h4> -->
             <ul class="recent-post-widget">
               @foreach($getRecord as $index => $record1)
@@ -62,7 +63,7 @@
                     <!-- Show truncated description for mobile view -->
                     <p class="mobile-description">{{ $truncatedDescription }}</p>
                     <!-- Show full description for desktop view -->
-                    <p class="desktop-description">{{ $record1->description }}</p>
+                    <p style="text-align: justify;padding-right:13px;"class="desktop-description">{{ $record1->description }}</p>
                   </div>
                   @if($index % 2 != 0)
                     <a href="{{ route('singleevent', ['id' => $record1->id]) }}">
@@ -75,6 +76,9 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="col-lg-2">
+      <!-- Your sidebar content goes here if you have any -->
     </div>
   </div>
 </div>

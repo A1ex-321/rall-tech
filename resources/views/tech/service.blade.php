@@ -1,6 +1,6 @@
 @include('tech.layout.header')
 <!--====== Start breadcrumbs-section ======-->
-<section class="breadcrumbs-section bg_cover" style="background-image: url({{ asset('public/tech/assets/images/221.jpg') }});">
+<!-- <section class="breadcrumbs-section bg_cover" style="background-image: url({{ asset('public/tech/assets/images/221.jpg') }});">
 
     <div class="container">
         <div class="row">
@@ -15,7 +15,9 @@
             </div>
         </div>
     </div>
-</section><!--====== End breadcrumbs-section ======-->
+</section> -->
+
+<!--====== End breadcrumbs-section ======-->
 <section class="service-area-v1 bg_cover pt-135 pb-120" style="background-image: url({{ asset('public/tech/assets/images/b1.jpg') }});">
     <div class="container">
         <div class="row justify-content-center">
